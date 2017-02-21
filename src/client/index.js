@@ -7,6 +7,7 @@ import {Router, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 
 // global styles
+import 'sanitize.css/sanitize.css';
 import './style.scss';
 
 import store from './store';
