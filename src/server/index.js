@@ -15,6 +15,9 @@ if (process.env.NODE_ENV === 'development') {
   require('./middlewares/production')(app);
 }
 
+// all other requests be handled by UI itself
+app.get('*', (req, res) => res.sendFile(resolve(clientBuildPath, 'index.html')));
+
 http.createServer(app).listen(process.env.APP_PORT, () => {
   console.log(`HTTP server is now running on http://localhost:${process.env.APP_PORT}`);
 });

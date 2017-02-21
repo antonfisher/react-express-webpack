@@ -3,28 +3,31 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {browserHistory} from 'react-router';
+import {Router, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 
+// global styles
+import './style.scss';
+
 import store from './store';
-import Router from './router';
+import routes from './routes';
 
 const history = syncHistoryWithStore(browserHistory, store);
 
-const render = (Router) => {
+const render = (appRoutes) => {
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={history}/>
+      <Router routes={appRoutes} history={history} />
     </Provider>,
     document.getElementById('app')
   );
-}
+};
 
-render(Router);
+render(routes);
 
 // need to remount root component on hot reload
 if (module.hot) {
-  module.hot.accept('./router.js', () => {
-    render(require('./router.js').default);
+  module.hot.accept('./routes.js', () => {
+    render(require('./routes.js').default);
   });
 }

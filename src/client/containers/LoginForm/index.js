@@ -1,16 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-export default class App extends React.Component {
+import Header from '../../components/Header';
+
+export default class LoginForm extends React.Component {
   static propTypes = {
     children: React.PropTypes.node
+  }
+
+  static defaultProps = {
+    children: ''
   }
 
   render() {
     return (
       <div>
-        Main Page 1<br/>
-        <Link to="/login">link to login</Link>
+        <Header>Login Page</Header>
+        <Link to="/">link to home</Link>
         <div>{this.props.children}</div>
       </div>
     );
