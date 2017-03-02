@@ -6,7 +6,6 @@ function Header({children}) {
   return (
     <h1 className={styles.header}>
       {children}
-      <span>test</span>
     </h1>
   );
 }

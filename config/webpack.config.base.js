@@ -18,7 +18,10 @@ module.exports = {
       'react-redux',
       'react-router',
       'react-router-redux',
-      'babel-polyfill'
+      'react-hot-loader',
+      'babel-polyfill',
+      'material-ui',
+      'react-tap-event-plugin'
     ]
   },
   output: {

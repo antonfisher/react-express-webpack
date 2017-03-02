@@ -1,24 +1,23 @@
 import React from 'react';
-import {Link} from 'react-router';
 
-import Header from '../../components/Header';
+import AppBar from '../../components/AppBar';
+import ProgressBar from '../../components/ProgressBar';
+import AppMenu from '../AppMenu';
 
 export default class App extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node
-  }
-
-  static defaultProps = {
-    children: ''
-  }
+    children: React.PropTypes.node.isRequired
+  };
 
   render() {
     return (
-      <div>
-        <Header>Main Page</Header>
-        <Link to="/login">link to login</Link>
-        <div>{this.props.children}</div>
-      </div>
+      <section>
+        <ProgressBar />
+        <AppBar>
+          <AppMenu />
+        </AppBar>
+        {React.Children.toArray(this.props.children)}
+      </section>
     );
   }
 }

@@ -2,33 +2,27 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {Router, browserHistory} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
+import {AppContainer} from 'react-hot-loader';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-// global styles
-import 'sanitize.css/sanitize.css';
-import './style.scss';
+import Root from './containers/root';
 
-import store from './store';
-import routes from './routes';
+injectTapEventPlugin();
 
-const history = syncHistoryWithStore(browserHistory, store);
-
-const render = (appRoutes) => {
+const render = (Component) => {
   ReactDOM.render(
-    <Provider store={store}>
-      <Router routes={appRoutes} history={history} />
-    </Provider>,
-    document.getElementById('app')
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
   );
 };
 
-render(routes);
+render(Root);
 
-// need to remount root component on hot reload
+// need to re-mount app component on hot reload
 if (module.hot) {
-  module.hot.accept('./routes.js', () => {
-    render(require('./routes.js').default);
+  module.hot.accept('./containers/root.js', () => {
+    render(require('./containers/root').default);
   });
 }
