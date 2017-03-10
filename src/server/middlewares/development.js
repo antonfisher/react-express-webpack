@@ -18,7 +18,7 @@ module.exports = function setup(app) {
   // fix browser history router
   app.get('*', (req, res) => {
     if (req.url !== '/' && !req.url.includes('.')) {
-      request('http://localhost:3000/', (error, response, body) => res.end(body));
+      request(`http://localhost:${process.env.APP_PORT}/`, (error, response, body) => res.end(body));
     } else {
       res.sendFile(resolve(compiler.outputPath, 'index.html'));
     }

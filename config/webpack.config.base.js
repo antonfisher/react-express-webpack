@@ -19,9 +19,11 @@ module.exports = {
       'react-router',
       'react-router-redux',
       'react-hot-loader',
+      'redux-logger',
       'babel-polyfill',
       'material-ui',
-      'react-tap-event-plugin'
+      'react-tap-event-plugin',
+      'immutable'
     ]
   },
   output: {

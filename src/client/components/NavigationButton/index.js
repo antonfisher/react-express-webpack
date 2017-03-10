@@ -8,7 +8,7 @@ class NavigationButton extends React.Component {
   static propTypes = {
     to: React.PropTypes.string.isRequired,
     label: React.PropTypes.string.isRequired,
-    children: React.PropTypes.node.isRequired
+    children: React.PropTypes.node
   };
 
   render() {

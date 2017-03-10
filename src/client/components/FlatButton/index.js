@@ -3,11 +3,13 @@ import FlatButton from 'material-ui/FlatButton';
 
 class Button extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
+    buttonFilterColor: React.PropTypes.string,
+    children: React.PropTypes.node,
     style: React.PropTypes.object
   };
 
   static defaultProps = {
+    buttonFilterColor: '',
     style: {}
   };
 
