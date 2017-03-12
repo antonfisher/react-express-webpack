@@ -6,7 +6,7 @@ import LoginForm from './containers/LoginForm';
 import NotFound from './containers/NotFound';
 import UsersPage from './containers/UsersPage';
 
-export default function ({history}) {
+export default function ({history}) { // eslint-disable-line react/prop-types
   return (
     <Router history={history}>
       <Route path="/" name="home" component={App}>

@@ -8,14 +8,37 @@ import ActionInfoOutlineIcon from 'material-ui/svg-icons/action/info-outline';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
-import {showModal, hideModal} from '../ModalsContainer/actions';
+import {showModal} from '../ModalsController/actions';
 import AboutWindow from '../../components/AboutWindow';
-import ConfirmationDialog from '../../containers/ConfirmationDialog';
+import ConfirmationDialog from '../../components/ConfirmationDialog';
 
-export class AppMenu extends React.Component {
+export class AppMenuComponent extends React.Component {
   static propTypes = {
-    onShowAboutWindow: React.PropTypes.func.isRequired
+    doLogout: React.PropTypes.func.isRequired,
+    showAboutWindow: React.PropTypes.func.isRequired,
+    showLogoutConfirmation: React.PropTypes.func.isRequired
   };
+
+  constructor(...args) {
+    super(...args);
+    this.onShowAboutWindow = this.onShowAboutWindow.bind(this);
+    this.onShowLogoutConfirmation = this.onShowLogoutConfirmation.bind(this);
+  }
+
+  onShowLogoutConfirmation() {
+    this.props.showLogoutConfirmation({
+      text: 'Log out?',
+      onOk: (hideModal) => {
+        this.props.doLogout(() => {
+          hideModal();
+        });
+      }
+    });
+  }
+
+  onShowAboutWindow() {
+    this.props.showAboutWindow();
+  }
 
   render() {
     return (
@@ -36,13 +59,13 @@ export class AppMenu extends React.Component {
           <MenuItem
             primaryText="Log out"
             leftIcon={<ActionExitToAppIcon />}
-            onTouchTap={this.props.onBeforeLogout.bind(this, this.props.onLogout)}
+            onTouchTap={this.onShowLogoutConfirmation}
           />
           <MenuItem primaryText="Help" leftIcon={<ActionHelpOutlineIcon />} />
           <MenuItem
             primaryText="About"
             leftIcon={<ActionInfoOutlineIcon />}
-            onTouchTap={this.props.onShowAboutWindow}
+            onTouchTap={this.onShowAboutWindow}
           />
         </IconMenu>
       </section>
@@ -52,16 +75,22 @@ export class AppMenu extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onShowAboutWindow() {
-      dispatch(showModal(AboutWindow.name));
+    showAboutWindow() {
+      dispatch(showModal({key: AboutWindow.name}));
     },
-    onBeforeLogout(callback) {
-      dispatch(showModal(ConfirmationDialog.name, {text: 'Log out?', onOk: callback}));
+    showLogoutConfirmation(props) {
+      dispatch(showModal({key: ConfirmationDialog.name, props}));
     },
-    onLogout() {
-      dispatch(hideModal(ConfirmationDialog.name));
+    doLogout(callback) {
+      console.log('-- logout!');
+      setTimeout(() => {
+        console.log('-- logout DONE!');
+        callback();
+      }, 2000);
     }
   };
 }
 
-export default AppMenu = connect(null, mapDispatchToProps)(AppMenu);
+const AppMenu = connect(null, mapDispatchToProps)(AppMenuComponent);
+
+export default AppMenu;

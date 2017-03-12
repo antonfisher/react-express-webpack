@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
-import ModalsContainerReducer from 'containers/ModalsContainer/reducer'
+import ModalsControllerReducer from 'containers/ModalsController/reducer';
 
 export default combineReducers({
-  modals: ModalsContainerReducer,
+  modals: ModalsControllerReducer,
   routing: routerReducer
 });

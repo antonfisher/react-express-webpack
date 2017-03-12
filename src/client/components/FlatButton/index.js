@@ -1,15 +1,14 @@
 import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
 
-class Button extends React.Component {
+class StyledFlatButton extends React.Component {
   static propTypes = {
-    buttonFilterColor: React.PropTypes.string,
     children: React.PropTypes.node,
     style: React.PropTypes.object
   };
 
   static defaultProps = {
-    buttonFilterColor: '',
+    children: null,
     style: {}
   };
 
@@ -24,4 +23,4 @@ class Button extends React.Component {
   }
 }
 
-export default Button;
+export default StyledFlatButton;

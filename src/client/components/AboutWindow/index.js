@@ -4,17 +4,19 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class AboutWindow extends React.Component {
   static propTypes = {
-    show: React.PropTypes.bool.isRequired,
-    onOk: React.PropTypes.func.isRequired
+    open: React.PropTypes.bool.isRequired,
+    onHideModal: React.PropTypes.func.isRequired
   };
 
   render() {
+    const {open, onHideModal} = this.props;
+
     const actions = [
-      <RaisedButton label="Ok" onTouchTap={this.props.onOk} secondary keyboardFocused />
+      <RaisedButton label="Ok" onTouchTap={onHideModal} secondary keyboardFocused />
     ];
 
     return (
-      <Dialog title="About" actions={actions} open={this.props.show} modal>
+      <Dialog title="About" actions={actions} open={open} modal>
         Here is about window.
       </Dialog>
     );
