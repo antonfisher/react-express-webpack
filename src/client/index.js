@@ -2,27 +2,43 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {browserHistory} from 'react-router';
 import {AppContainer} from 'react-hot-loader';
+import {syncHistoryWithStore} from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Root from './containers/root';
+// global styles
+import 'sanitize.css/sanitize.css';
+import './style.scss';
+
+import store from './store';
+import Router from './router';
+import muiTheme from './muiTheme';
 
 injectTapEventPlugin();
 
-const render = (Component) => {
+const history = syncHistoryWithStore(browserHistory, store);
+
+const render = (AppRouter) => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <Provider store={store}>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <AppRouter history={history} />
+        </MuiThemeProvider>
+      </Provider>
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('app')
   );
 };
 
-render(Root);
+render(Router);
 
 // need to re-mount app component on hot reload
 if (module.hot) {
-  module.hot.accept('./containers/root.js', () => {
-    render(require('./containers/root').default);
+  module.hot.accept('./router.js', () => {
+    render(require('./router').default);
   });
 }
