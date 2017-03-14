@@ -1,4 +1,4 @@
-import {Map, OrderedMap, List} from 'immutable';
+import {OrderedMap, List} from 'immutable';
 import {API_GET_STATS_REQUESTED, API_GET_STATS_LOADED, API_GET_STATS_ERROR} from './actions';
 
 const initialState = {
@@ -19,7 +19,6 @@ export default function ApiReducer(state = initialState, action) {
       state.loading = true;
       return state;
     case API_GET_STATS_LOADED:
-      console.log('-- payload', action.payload);
       state.loading = (state.requests.size > 0);
       state.data.servers = List(action.payload);
       state.requests.set(id, true);

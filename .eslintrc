@@ -22,8 +22,11 @@
   ],
   "rules": {
     "no-console": 0,
+    "no-plusplus": 0,
     "comma-dangle": 0,
+    "arrow-parens": 0,
     "global-require": 0,
+    "no-param-reassign": 0,
     "max-len": ["error", 120],
     "no-restricted-syntax": 0,
     "object-curly-spacing": 0,

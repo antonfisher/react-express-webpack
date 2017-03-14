@@ -15,4 +15,4 @@ export function apiGetStats() {
       .then((data) => dispatch(apiGetStatsLoaded(data.servers)))
       .catch((err) => dispatch(apiGetStatsError(err)));
   };
-};
+}

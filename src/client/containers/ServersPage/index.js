@@ -35,10 +35,10 @@ export class ServersPageComponent extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    apiGetStats () {
+    apiGetStats() {
       dispatch(apiGetStats());
     }
-  }
+  };
 }
 
 const ServersPage = connect(null, mapDispatchToProps)(ServersPageComponent);

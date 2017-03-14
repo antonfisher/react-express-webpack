@@ -4,7 +4,7 @@ import {routerMiddleware} from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import reducers from './reducers';
-import {reduxActionsLogger} from './logger';
+import reduxActionsLogger from './logger';
 
 const initialState = {};
 

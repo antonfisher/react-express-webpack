@@ -1,7 +1,7 @@
 import {Iterable} from 'immutable';
 import createLogger from 'redux-logger';
 
-export const reduxActionsLogger = createLogger({
+const reduxActionsLogger = createLogger({
   collapsed: true,
   logErrors: false,
   titleFormatter: ((action, time, took) => (`Action: ${action.type} [${time} ${Math.round(took)}ms]`)),
@@ -17,3 +17,5 @@ export const reduxActionsLogger = createLogger({
     return newState;
   }
 });
+
+export default reduxActionsLogger;
