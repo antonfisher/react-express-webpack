@@ -1,7 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
+import {apiGetStats} from '../../api/actions';
 
-export default class ServersPage extends React.Component {
+export class ServersPageComponent extends React.Component {
+  static propTypes = {
+    apiGetStats: React.PropTypes.func.isRequired
+  };
+
+  componentDidMount() {
+    this.props.apiGetStats();
+  }
+
   render() {
     return (
       <section style={{padding: 20}}>
@@ -22,3 +32,15 @@ export default class ServersPage extends React.Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    apiGetStats () {
+      dispatch(apiGetStats());
+    }
+  }
+}
+
+const ServersPage = connect(null, mapDispatchToProps)(ServersPageComponent);
+
+export default ServersPage;

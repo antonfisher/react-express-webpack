@@ -1,7 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
-import AppBar from '../../components/AppBar';
+import AppBar from '../AppBar';
 import ProgressBar from '../../components/ProgressBar';
 import AppMenu from '../AppMenu';
 import ModalsController from '../ModalsController';

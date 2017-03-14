@@ -1,16 +1,16 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {green100, green300, lightGreen600, lightGreen500} from 'material-ui/styles/colors';
+import {green100, green300, lightGreen900, lightGreen800} from 'material-ui/styles/colors';
 
 export default getMuiTheme({
   fontSize: 14,
   palette: {
-    primary1Color: lightGreen500,
+    primary1Color: lightGreen800,
     primary2Color: green300,
-    primary3Color: lightGreen600,
+    primary3Color: lightGreen900,
     accent1Color: green300
   },
   toolbar: {
-    backgroundColor: lightGreen500
+    backgroundColor: lightGreen800
   },
   flatButton: {
     textTransform: 'none',

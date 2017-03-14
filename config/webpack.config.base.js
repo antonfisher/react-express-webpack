@@ -20,10 +20,12 @@ module.exports = {
       // 'react-actions',
       'react-router-redux',
       'react-hot-loader',
+      'react-tap-event-plugin',
       'redux-logger',
+      'redux-thunk',
       'babel-polyfill',
       'material-ui',
-      'react-tap-event-plugin',
+      'whatwg-fetch',
       'immutable'
     ]
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import ActionSearchIcon from 'material-ui/svg-icons/action/search';
@@ -6,14 +7,17 @@ import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import CircularProgress from 'material-ui/CircularProgress';
 import MotorcycleIcon from 'material-ui/svg-icons/action/motorcycle';
 
-import NavigationButton from '../NavigationButton';
+import NavigationButton from '../../components/NavigationButton';
 
-export default class AppBar extends React.Component {
+export class AppBarComponent extends React.Component {
   static propTypes = {
+    loading: React.PropTypes.bool.isRequired,
     children: React.PropTypes.node.isRequired
   };
 
   render() {
+    const {loading} = this.props;
+
     return (
       <Toolbar>
         <ToolbarGroup style={{paddingLeft: 20}} firstChild>
@@ -22,7 +26,7 @@ export default class AppBar extends React.Component {
           <NavigationButton to="/users" label="Users" />
         </ToolbarGroup>
         <ToolbarGroup>
-          <CircularProgress style={{marginLeft: 20}} size={25} thickness={1} color="white" />
+          {loading && <CircularProgress style={{marginLeft: 20}} size={25} thickness={1} color="white" />}
           <IconButton tooltip="Search">
             <ActionSearchIcon color="white" />
           </IconButton>
@@ -39,3 +43,13 @@ export default class AppBar extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    loading: state.api.loading
+  };
+}
+
+const AppBar = connect(mapStateToProps)(AppBarComponent);
+
+export default AppBar;

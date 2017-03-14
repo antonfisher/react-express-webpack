@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import 'whatwg-fetch';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,8 +17,11 @@ import './style.scss';
 import store from './store';
 import Router from './router';
 import muiTheme from './muiTheme';
+import api from './api/index';
 
 injectTapEventPlugin();
+
+api.setEndpoint('/api');
 
 const history = syncHistoryWithStore(browserHistory, store);
 
