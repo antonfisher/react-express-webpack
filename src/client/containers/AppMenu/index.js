@@ -9,6 +9,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
 import {showModal} from '../ModalsController/actions';
+import {apiGetStats} from '../../api/actions';
 import AboutWindow from '../../components/AboutWindow';
 import ConfirmationDialog from '../../components/ConfirmationDialog';
 
@@ -81,12 +82,8 @@ function mapDispatchToProps(dispatch) {
     showLogoutConfirmation(props) {
       dispatch(showModal({key: ConfirmationDialog.name, props}));
     },
-    doLogout(callback) {
-      console.log('-- logout!');
-      setTimeout(() => {
-        console.log('-- logout DONE!');
-        callback();
-      }, 2000);
+    doLogout(callback) { // get rid of callback here
+      dispatch(apiGetStats(callback));
     }
   };
 }

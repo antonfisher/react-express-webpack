@@ -5,24 +5,25 @@ import {apiGetStats} from '../../api/actions';
 
 export class ServersPageComponent extends React.Component {
   static propTypes = {
+    servers: React.PropTypes.object.isRequired,
     apiGetStats: React.PropTypes.func.isRequired
   };
 
   componentDidMount() {
     this.props.apiGetStats();
+    setTimeout(() => this.props.apiGetStats(), 5000);
   }
 
   render() {
+    const {servers} = this.props;
+
     return (
       <section style={{padding: 20}}>
         <h2>Servers</h2>
         <section style={{display: 'flex', flexWrap: 'wrap'}}>
-          {new Array(13).fill(true).map((n, i) => (
-            <Paper
-              key={String.fromCharCode(97 + i)}
-              style={{marginRight: 20, marginTop: 20, minWidth: 250, padding: 15, height: 100}}
-            >
-              {i}
+          {servers.map(({id, name}) => (
+            <Paper key={id} style={{marginRight: 20, marginTop: 20, minWidth: 250, padding: 15, height: 100}}>
+              {id}: {name}
               <br />
               <br />
             </Paper>
@@ -33,6 +34,12 @@ export class ServersPageComponent extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    servers: state.api.getIn(['data', 'servers'])
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     apiGetStats() {
@@ -41,6 +48,6 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const ServersPage = connect(null, mapDispatchToProps)(ServersPageComponent);
+const ServersPage = connect(mapStateToProps, mapDispatchToProps)(ServersPageComponent);
 
 export default ServersPage;

@@ -46,7 +46,7 @@ export class AppBarComponent extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    loading: state.api.loading
+    loading: state.api.get('loading')
   };
 }
 
