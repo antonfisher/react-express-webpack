@@ -9,7 +9,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
 import {showModal} from '../ModalsController/actions';
-import {apiGetStats} from '../../api/actions';
+import {apiGetServers} from '../../api/actions';
 import AboutWindow from '../../components/AboutWindow';
 import ConfirmationDialog from '../../components/ConfirmationDialog';
 
@@ -83,7 +83,10 @@ function mapDispatchToProps(dispatch) {
       dispatch(showModal({key: ConfirmationDialog.name, props}));
     },
     doLogout(callback) { // get rid of callback here
-      dispatch(apiGetStats(callback));
+      dispatch(apiGetServers(callback));
+      setTimeout(() => {
+        dispatch(showModal({key: AboutWindow.name}));
+      }, 5000)
     }
   };
 }

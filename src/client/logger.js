@@ -3,7 +3,7 @@ import createLogger from 'redux-logger';
 
 const reduxActionsLogger = createLogger({
   collapsed: true,
-  logErrors: false,
+  logErrors: true,
   titleFormatter: ((action, time, took) => (`Action: ${action.type} [${time} ${Math.round(took)}ms]`)),
   stateTransformer: (state) => {
     const newState = {};

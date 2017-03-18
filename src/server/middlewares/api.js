@@ -3,6 +3,7 @@ module.exports = function setup(app) {
   app.get('/api/stats', (req, res) => {
     setTimeout(() => {
       res.json({
+        error: 'server error message',
         status: 'online',
         servers: [
           {id: 1, name: 'a'},
@@ -10,6 +11,6 @@ module.exports = function setup(app) {
           {id: 3, name: 'c'}
         ]
       });
-    }, 10000);
+    }, 3000);
   });
 };

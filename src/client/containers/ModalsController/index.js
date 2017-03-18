@@ -4,10 +4,12 @@ import {connect} from 'react-redux';
 import {hideModal} from './actions';
 import AboutWindow from '../../components/AboutWindow';
 import ConfirmationDialog from '../../components/ConfirmationDialog';
+import ErrorWindow from '../../components/ErrorWindow';
 
 const modalComponentList = [
   AboutWindow,
-  ConfirmationDialog
+  ConfirmationDialog,
+  ErrorWindow
 ];
 
 export class ModalsControllerComponent extends React.Component {
@@ -33,6 +35,7 @@ export class ModalsControllerComponent extends React.Component {
     const children = [];
 
     for (const [key, props] of modals.entries()) {
+      console.log('-- opend modal', key);
       openedModalKeys.push(key);
       children.push(this.renderModalComponent(key, {open: true, ...props}));
     }
@@ -40,9 +43,12 @@ export class ModalsControllerComponent extends React.Component {
     // need to add all modals for fade-out animation
     for (const key in this._modalComponentsMap) {
       if (!openedModalKeys.includes(key)) {
+        console.log('-- hidden modal', key);
         children.unshift(this.renderModalComponent(key, {open: false}));
       }
     }
+
+    console.log('-- children', children.map(c => c.key));
 
     return (
       <section>

@@ -1,17 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
-import {apiGetStats} from '../../api/actions';
+import {apiGetServers} from '../../api/actions';
 
 export class ServersPageComponent extends React.Component {
   static propTypes = {
     servers: React.PropTypes.object.isRequired,
-    apiGetStats: React.PropTypes.func.isRequired
+    apiGetServers: React.PropTypes.func.isRequired
   };
 
   componentDidMount() {
-    this.props.apiGetStats();
-    setTimeout(() => this.props.apiGetStats(), 5000);
+    this.props.apiGetServers();
+    setTimeout(() => this.props.apiGetServers(), 1500);
   }
 
   render() {
@@ -42,8 +42,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    apiGetStats() {
-      dispatch(apiGetStats());
+    apiGetServers() {
+      dispatch(apiGetServers());
     }
   };
 }
