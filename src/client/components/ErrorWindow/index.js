@@ -1,6 +1,5 @@
 import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import Window from '../Window';
 
 class ErrorWindow extends React.Component {
   static propTypes = {
@@ -9,17 +8,17 @@ class ErrorWindow extends React.Component {
     onHideModal: React.PropTypes.func.isRequired
   };
 
+  static defaultProps = {
+    message: 'An error occurred lol.'
+  };
+
   render() {
     const {open, message, onHideModal} = this.props;
 
-    const actions = [
-      <RaisedButton label="Close" onTouchTap={onHideModal} />
-    ];
-
     return (
-      <Dialog title="Error" actions={actions} open={open} modal>
+      <Window title="Error" open={open} onHideModal={onHideModal}>
         {message}
-      </Dialog>
+      </Window>
     );
   }
 }

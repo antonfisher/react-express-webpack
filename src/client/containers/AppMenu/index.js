@@ -8,12 +8,12 @@ import ActionInfoOutlineIcon from 'material-ui/svg-icons/action/info-outline';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
-import {showModal} from '../ModalsController/actions';
+import {showModal} from '../ModalsLayout/actions';
 import {apiGetServers} from '../../api/actions';
 import AboutWindow from '../../components/AboutWindow';
 import ConfirmationDialog from '../../components/ConfirmationDialog';
 
-export class AppMenuComponent extends React.Component {
+export class AppMenu extends React.Component {
   static propTypes = {
     doLogout: React.PropTypes.func.isRequired,
     showAboutWindow: React.PropTypes.func.isRequired,
@@ -86,11 +86,10 @@ function mapDispatchToProps(dispatch) {
       dispatch(apiGetServers(callback));
       setTimeout(() => {
         dispatch(showModal({key: AboutWindow.name}));
-      }, 5000)
+      }, 1500);
     }
   };
 }
 
-const AppMenu = connect(null, mapDispatchToProps)(AppMenuComponent);
 
-export default AppMenu;
+export default connect(null, mapDispatchToProps)(AppMenu);

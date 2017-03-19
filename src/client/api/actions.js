@@ -1,7 +1,7 @@
 import {createAction} from 'redux-actions';
 
 import api from './index';
-import {showModal} from '../containers/ModalsController/actions';
+import {showModal} from '../containers/ModalsLayout/actions';
 import ErrorWindow from '../components/ErrorWindow';
 
 function* createGuidGenerator() {

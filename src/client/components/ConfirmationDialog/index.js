@@ -30,7 +30,7 @@ class ConfirmationDialog extends React.Component {
     ];
 
     return (
-      <Dialog title="Confirmation" actions={actions} open={open} modal>
+      <Dialog title="Confirmation" actions={actions} open={open} onRequestClose={onHideModal} modal>
         {text}
       </Dialog>
     );

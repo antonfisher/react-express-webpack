@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import AppBar from '../AppBar';
 import ProgressBar from '../../components/ProgressBar';
 import AppMenu from '../AppMenu';
-import ModalsController from '../ModalsController';
+import ModalsLayout from '../ModalsLayout';
 
 export default class App extends React.Component {
   static propTypes = {
@@ -23,7 +23,7 @@ export default class App extends React.Component {
         <section style={{paddingTop: 50}}>
           {React.Children.toArray(this.props.children)}
         </section>
-        <ModalsController />
+        <ModalsLayout />
       </section>
     );
   }

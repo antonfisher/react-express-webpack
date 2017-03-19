@@ -1,6 +1,5 @@
 import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import Window from '../Window';
 
 class AboutWindow extends React.Component {
   static propTypes = {
@@ -11,14 +10,10 @@ class AboutWindow extends React.Component {
   render() {
     const {open, onHideModal} = this.props;
 
-    const actions = [
-      <RaisedButton label="Ok" onTouchTap={onHideModal} secondary keyboardFocused />
-    ];
-
     return (
-      <Dialog title="About" actions={actions} open={open} modal>
+      <Window title="About" open={open} onHideModal={onHideModal}>
         Here is about window.
-      </Dialog>
+      </Window>
     );
   }
 }

@@ -2,10 +2,10 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
 import ApiReducer from './api/reducer';
-import ModalsControllerReducer from './containers/ModalsController/reducer';
+import ModalsLayoutReducer from './containers/ModalsLayout/reducer';
 
 export default combineReducers({
-  modals: ModalsControllerReducer,
+  modals: ModalsLayoutReducer,
   routing: routerReducer,
   api: ApiReducer
 });

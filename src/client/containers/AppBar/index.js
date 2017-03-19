@@ -9,14 +9,14 @@ import MotorcycleIcon from 'material-ui/svg-icons/action/motorcycle';
 
 import NavigationButton from '../../components/NavigationButton';
 
-export class AppBarComponent extends React.Component {
+export class AppBar extends React.Component {
   static propTypes = {
     loading: React.PropTypes.bool.isRequired,
     children: React.PropTypes.node.isRequired
   };
 
   render() {
-    const {loading} = this.props;
+    const {loading, children} = this.props;
 
     return (
       <Toolbar>
@@ -37,7 +37,7 @@ export class AppBarComponent extends React.Component {
             hintStyle={{color: 'white'}}
             underlineFocusStyle={{borderColor: 'white'}}
           />
-          {React.Children.toArray(this.props.children)}
+          {children}
         </ToolbarGroup>
       </Toolbar>
     );
@@ -50,6 +50,4 @@ function mapStateToProps(state) {
   };
 }
 
-const AppBar = connect(mapStateToProps)(AppBarComponent);
-
-export default AppBar;
+export default connect(mapStateToProps)(AppBar);

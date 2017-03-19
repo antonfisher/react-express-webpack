@@ -8,11 +8,11 @@ import ErrorWindow from '../../components/ErrorWindow';
 
 const modalComponentList = [
   AboutWindow,
-  ConfirmationDialog,
-  ErrorWindow
+  ErrorWindow,
+  ConfirmationDialog
 ];
 
-export class ModalsControllerComponent extends React.Component {
+export class ModalsLayout extends React.Component {
   static propTypes = {
     modals: React.PropTypes.object.isRequired,
     onHideModal: React.PropTypes.func.isRequired
@@ -25,30 +25,17 @@ export class ModalsControllerComponent extends React.Component {
   }
 
   renderModalComponent(key, props) {
-    const onHideModal = this.props.onHideModal.bind(this, key);
+    const onHideModal = this.props.onHideModal.bind(this, {key});
     return React.createElement(this._modalComponentsMap[key], {key, onHideModal, ...props});
   }
 
   render() {
     const {modals} = this.props;
-    const openedModalKeys = [];
     const children = [];
 
     for (const [key, props] of modals.entries()) {
-      console.log('-- opend modal', key);
-      openedModalKeys.push(key);
-      children.push(this.renderModalComponent(key, {open: true, ...props}));
+      children.push(this.renderModalComponent(key, props));
     }
-
-    // need to add all modals for fade-out animation
-    for (const key in this._modalComponentsMap) {
-      if (!openedModalKeys.includes(key)) {
-        console.log('-- hidden modal', key);
-        children.unshift(this.renderModalComponent(key, {open: false}));
-      }
-    }
-
-    console.log('-- children', children.map(c => c.key));
 
     return (
       <section>
@@ -72,6 +59,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const ModalsController = connect(mapStateToProps, mapDispatchToProps)(ModalsControllerComponent);
-
-export default ModalsController;
+export default connect(mapStateToProps, mapDispatchToProps)(ModalsLayout);

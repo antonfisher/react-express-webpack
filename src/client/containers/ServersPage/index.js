@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import {apiGetServers} from '../../api/actions';
 
-export class ServersPageComponent extends React.Component {
+export class ServersPage extends React.Component {
   static propTypes = {
     servers: React.PropTypes.object.isRequired,
     apiGetServers: React.PropTypes.func.isRequired
@@ -48,6 +48,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const ServersPage = connect(mapStateToProps, mapDispatchToProps)(ServersPageComponent);
-
-export default ServersPage;
+export default connect(mapStateToProps, mapDispatchToProps)(ServersPage);
