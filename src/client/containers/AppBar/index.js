@@ -27,16 +27,16 @@ export class AppBar extends React.Component {
         </ToolbarGroup>
         <ToolbarGroup>
           {loading && <CircularProgress style={{marginLeft: 20}} size={25} thickness={1} color="white" />}
-          <IconButton tooltip="Search">
-            <ActionSearchIcon color="white" />
-          </IconButton>
           <TextField
             hintText="Search"
-            style={{width: 120, marginRight: 30, marginTop: 3, fontSize: 13}}
+            style={{width: 120, marginLeft: 20, marginTop: 3, fontSize: 13}}
             inputStyle={{color: 'white'}}
             hintStyle={{color: 'white'}}
             underlineFocusStyle={{borderColor: 'white'}}
           />
+          <IconButton tooltip="Search">
+            <ActionSearchIcon color="white" />
+          </IconButton>
           {children}
         </ToolbarGroup>
       </Toolbar>
