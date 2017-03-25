@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import ActionSearchIcon from 'material-ui/svg-icons/action/search';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
-import MotorcycleIcon from 'material-ui/svg-icons/action/motorcycle';
+import AirplanemodeActiveIcon from 'material-ui/svg-icons/device/airplanemode-active';
 
 import NavigationButton from '../../components/NavigationButton';
 
@@ -18,7 +18,7 @@ export default class AppBar extends React.Component {
     return (
       <Toolbar>
         <ToolbarGroup style={{paddingLeft: 20}} firstChild>
-          <MotorcycleIcon color="white" style={{height: 40, width: 40, marginRight: 30}} />
+          <AirplanemodeActiveIcon color="white" style={{height: 40, width: 40, marginRight: 30}} />
           <NavigationButton to="/" label="Servers" />
           <NavigationButton to="/users" label="Users" />
         </ToolbarGroup>
