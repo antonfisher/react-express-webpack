@@ -24,13 +24,13 @@ export default class AppBar extends React.Component {
         </ToolbarGroup>
         <ToolbarGroup>
           <TextField
-            hintText="Search"
+            hintText="Filter"
             style={{width: 120, marginLeft: 20, marginTop: 3, fontSize: 13}}
             inputStyle={{color: 'white'}}
             hintStyle={{color: 'white'}}
             underlineFocusStyle={{borderColor: 'white'}}
           />
-          <IconButton tooltip="Search">
+          <IconButton tooltip="Filter">
             <ActionSearchIcon color="white" />
           </IconButton>
           {children}

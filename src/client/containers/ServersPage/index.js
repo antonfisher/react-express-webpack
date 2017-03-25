@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import {apiGetServers} from '../../api/actions';
 
 export class ServersPage extends React.Component {
@@ -29,6 +30,25 @@ export class ServersPage extends React.Component {
             </Paper>
           ))}
         </section>
+        <br />
+        <br />
+        <h3>Table</h3>
+        <Table multiSelectable>
+          <TableHeader>
+            <TableRow displayBorder>
+              <TableHeaderColumn>ID</TableHeaderColumn>
+              <TableHeaderColumn>Name</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody showRowHover>
+            {servers.map(({id, name}) => (
+              <TableRow key={id}>
+                <TableRowColumn>{id}</TableRowColumn>
+                <TableRowColumn>{name}</TableRowColumn>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </section>
     );
   }
