@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development node ./src/server",
     "start": "NODE_ENV=production node ./build/server",
     "prebuild:client": "mkdir -p ./build && rm -rf ./build/client",
-    "build:client": "NODE_ENV=production webpack --progress --display-error-details --config=config/webpack.config.prod.js",
+    "build:client": "NODE_ENV=production webpack -p --progress --display-error-details --config=config/webpack.config.prod.js",
     "build:server": "mkdir -p ./build && rm -rf ./build/server && cp -r src/server build/server",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern node_modules -- .",
