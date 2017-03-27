@@ -25,9 +25,9 @@ export class ServersPage extends React.Component {
         <h2>
           <FormattedMessage id="servers.title" defaultMessage="Servers" />
         </h2>
-        <section style={styles.serversContainer}>
+        <section className={styles.serversContainer}>
           {servers.map(({id, name}) => (
-            <Paper key={id} style={styles.serverContainer}>
+            <Paper key={id} className={styles.serverContainer}>
               {id}: {name}
               <br />
               <br />
