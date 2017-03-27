@@ -13,21 +13,22 @@ module.exports = {
   entry: {
     app: './src/client/index.js',
     vendor: [
+      'babel-polyfill',
+      'immutable',
+      'material-ui',
       'react',
       'react-dom',
+      'react-hot-loader',
+      'react-intl',
       'react-redux',
       'react-router',
       'react-router-redux',
-      'react-hot-loader',
       'react-tap-event-plugin',
       'redux',
       'redux-actions',
       'redux-logger',
       'redux-thunk',
-      'babel-polyfill',
-      'material-ui',
-      'whatwg-fetch',
-      'immutable'
+      'whatwg-fetch'
     ]
   },
   output: {

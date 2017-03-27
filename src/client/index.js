@@ -4,6 +4,7 @@ import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
+import {IntlProvider} from 'react-intl';
 import {browserHistory} from 'react-router';
 import {AppContainer} from 'react-hot-loader';
 import {syncHistoryWithStore} from 'react-router-redux';
@@ -29,9 +30,11 @@ const render = (AppRouter) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <AppRouter history={history} />
-        </MuiThemeProvider>
+        <IntlProvider locale="en">
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <AppRouter history={history} />
+          </MuiThemeProvider>
+        </IntlProvider>
       </Provider>
     </AppContainer>,
     document.getElementById('app')

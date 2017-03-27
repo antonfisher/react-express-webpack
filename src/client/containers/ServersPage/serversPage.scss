@@ -1,0 +1,11 @@
+.serversContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  .serverContainer {
+    margin: 20px 20px 0 0;
+    min-width: 250px;
+    padding: 15px;
+    height: 100px;
+  }
+}

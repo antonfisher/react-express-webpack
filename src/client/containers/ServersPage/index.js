@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import {FormattedMessage} from 'react-intl';
 import {apiGetServers} from '../../api/actions';
+import styles from './serversPage.scss';
 
 export class ServersPage extends React.Component {
   static propTypes = {
@@ -20,10 +22,12 @@ export class ServersPage extends React.Component {
 
     return (
       <section style={{padding: 20}}>
-        <h2>Servers</h2>
-        <section style={{display: 'flex', flexWrap: 'wrap'}}>
+        <h2>
+          <FormattedMessage id="servers.title" defaultMessage="Servers" />
+        </h2>
+        <section style={styles.serversContainer}>
           {servers.map(({id, name}) => (
-            <Paper key={id} style={{marginRight: 20, marginTop: 20, minWidth: 250, padding: 15, height: 100}}>
+            <Paper key={id} style={styles.serverContainer}>
               {id}: {name}
               <br />
               <br />
