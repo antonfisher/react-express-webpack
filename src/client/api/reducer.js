@@ -12,6 +12,9 @@ const initialState = Map({
   errors: Map({
     last: null
   }),
+  lastUpdate: Map({
+    servers: null
+  }),
   data: Map({
     servers: List()
   })
@@ -35,7 +38,9 @@ export default function ApiReducer(state = initialState, action) {
         );
 
     case API_DATA_SERVERS_LOADED:
-      return state.setIn(['data', 'servers'], List(action.payload.servers));
+      return state
+        .setIn(['lastUpdate', 'servers'], Date.now())
+        .setIn(['data', 'servers'], List(action.payload.servers));
 
     default:
       return state;

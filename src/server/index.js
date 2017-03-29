@@ -1,11 +1,14 @@
 const http = require('http');
 const express = require('express');
+const bodyParser = require('body-parser');
 const setupApplicationApi = require('./middlewares/api');
 
 process.env.APP_PORT = process.env.APP_PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 const app = express();
+
+app.use(bodyParser.json());
 
 // apply application API
 setupApplicationApi(app);
