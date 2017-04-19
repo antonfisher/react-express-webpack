@@ -1,6 +1,10 @@
 React boilerplate with ES2015, Express.js, and Webpack 2
 
-##Technologies:
+[![Build Status](https://travis-ci.org/antonfisher/react-express-webpack2.svg?branch=master)](https://travis-ci.org/antonfisher/react-express-webpack2)
+[![Dependency Status](https://dependencyci.com/github/antonfisher/react-express-webpack2/badge)](https://dependencyci.com/github/antonfisher/react-express-webpack2)
+[![bitHound Overall Score](https://www.bithound.io/github/antonfisher/react-express-webpack2/badges/score.svg)](https://www.bithound.io/github/antonfisher/react-express-webpack2)
+
+## Technologies:
 
 - React
 - React Router
@@ -13,4 +17,4 @@ React boilerplate with ES2015, Express.js, and Webpack 2
 - ESLint
 
 ## ToDo:
-- Tests
+- [ ] tests
