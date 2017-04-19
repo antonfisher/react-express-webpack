@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import ActionSearchIcon from 'material-ui/svg-icons/action/search';
@@ -9,7 +10,7 @@ import NavigationButton from '../../components/NavigationButton';
 
 export default class AppBar extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node.isRequired
+    children: PropTypes.node.isRequired
   };
 
   render() {

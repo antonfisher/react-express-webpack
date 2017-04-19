@@ -16,6 +16,7 @@ module.exports = {
       'babel-polyfill',
       'immutable',
       'material-ui',
+      'prop-types',
       'react',
       'react-dom',
       'react-hot-loader',

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 
 class StyledFlatButton extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node,
-    style: React.PropTypes.object
+    children: PropTypes.node,
+    style: PropTypes.object
   };
 
   static defaultProps = {

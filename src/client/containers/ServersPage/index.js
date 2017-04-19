@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
@@ -10,10 +11,10 @@ import styles from './serversPage.scss';
 
 export class ServersPage extends React.Component {
   static propTypes = {
-    servers: React.PropTypes.object.isRequired,
-    apiAddServer: React.PropTypes.func.isRequired,
-    apiGetServers: React.PropTypes.func.isRequired,
-    serversLastUpdate: React.PropTypes.number
+    servers: PropTypes.object.isRequired,
+    apiAddServer: PropTypes.func.isRequired,
+    apiGetServers: PropTypes.func.isRequired,
+    serversLastUpdate: PropTypes.number
   };
 
   static defaultProps = {

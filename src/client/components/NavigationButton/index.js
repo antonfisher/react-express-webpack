@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {lightGreen600} from 'material-ui/styles/colors';
 
@@ -6,9 +7,9 @@ import FlatButton from '../FlatButton';
 
 class NavigationButton extends React.Component {
   static propTypes = {
-    to: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
-    children: React.PropTypes.node
+    to: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    children: PropTypes.node
   };
 
   static defaultProps = {

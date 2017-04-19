@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import AppBar from '../AppBar';
@@ -8,8 +9,8 @@ import ModalsLayout from '../ModalsLayout';
 
 export class App extends React.Component {
   static propTypes = {
-    loading: React.PropTypes.bool.isRequired,
-    children: React.PropTypes.node.isRequired
+    loading: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired
   };
 
   render() {

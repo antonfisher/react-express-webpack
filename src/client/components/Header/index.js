@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './style.scss';
 
@@ -11,7 +12,7 @@ function Header({children}) {
 }
 
 Header.propTypes = {
-  children: React.PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 };
 
 export default Header;

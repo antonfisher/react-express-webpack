@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {hideModal} from './actions';
@@ -14,8 +15,8 @@ const modalComponentList = [
 
 export class ModalsLayout extends React.Component {
   static propTypes = {
-    modals: React.PropTypes.object.isRequired,
-    onHideModal: React.PropTypes.func.isRequired
+    modals: PropTypes.object.isRequired,
+    onHideModal: PropTypes.func.isRequired
   };
 
   constructor(...args) {

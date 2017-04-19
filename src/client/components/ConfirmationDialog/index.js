@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -6,11 +7,11 @@ import FlatButton from '../FlatButton';
 
 class ConfirmationDialog extends React.Component {
   static propTypes = {
-    open: React.PropTypes.bool.isRequired,
-    onHideModal: React.PropTypes.func.isRequired,
-    onOk: React.PropTypes.func,
-    onCancel: React.PropTypes.func,
-    text: React.PropTypes.string
+    open: PropTypes.bool.isRequired,
+    onHideModal: PropTypes.func.isRequired,
+    onOk: PropTypes.func,
+    onCancel: PropTypes.func,
+    text: PropTypes.string
   };
 
   static defaultProps = {

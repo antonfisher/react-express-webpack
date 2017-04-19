@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import IconMenu from 'material-ui/IconMenu';
 import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
@@ -15,9 +16,9 @@ import ConfirmationDialog from '../../components/ConfirmationDialog';
 
 export class AppMenu extends React.Component {
   static propTypes = {
-    doLogout: React.PropTypes.func.isRequired,
-    showAboutWindow: React.PropTypes.func.isRequired,
-    showLogoutConfirmation: React.PropTypes.func.isRequired
+    doLogout: PropTypes.func.isRequired,
+    showAboutWindow: PropTypes.func.isRequired,
+    showLogoutConfirmation: PropTypes.func.isRequired
   };
 
   constructor(...args) {

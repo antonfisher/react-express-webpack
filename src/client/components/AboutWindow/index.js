@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Window from '../Window';
 
 class AboutWindow extends React.Component {
   static propTypes = {
-    open: React.PropTypes.bool.isRequired,
-    onHideModal: React.PropTypes.func.isRequired
+    open: PropTypes.bool.isRequired,
+    onHideModal: PropTypes.func.isRequired
   };
 
   render() {

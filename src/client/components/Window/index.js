@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class Window extends React.Component {
   static propTypes = {
-    open: React.PropTypes.bool.isRequired,
-    onHideModal: React.PropTypes.func.isRequired,
-    children: React.PropTypes.node
+    open: PropTypes.bool.isRequired,
+    onHideModal: PropTypes.func.isRequired,
+    children: PropTypes.node
   };
 
   static defaultProps = {
