@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import Paper from 'material-ui/Paper';
+
 import AppBar from '../AppBar';
-import ProgressBar from '../../components/ProgressBar';
 import AppMenu from '../AppMenu';
 import ModalsLayout from '../ModalsLayout';
+import NotFound from '../NotFound';
+import ServersPage from '../ServersPage';
+import ProgressBar from '../../components/ProgressBar';
 
 export class App extends React.Component {
   static propTypes = {
-    loading: PropTypes.bool.isRequired,
-    children: PropTypes.node.isRequired
+    loading: PropTypes.bool.isRequired
   };
 
   render() {
@@ -25,7 +28,11 @@ export class App extends React.Component {
           {loading && <ProgressBar />}
         </Paper>
         <section style={{paddingTop: 50}}>
-          {React.Children.toArray(this.props.children)}
+          <Switch>
+            <Route path="/servers" component={ServersPage} />
+            <Route path="/users" name="home-users" component={NotFound} />
+            <Redirect to="/servers" />
+          </Switch>
         </section>
         <ModalsLayout />
       </section>

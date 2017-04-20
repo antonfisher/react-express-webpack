@@ -21,20 +21,21 @@
     "react"
   ],
   "rules": {
-    "no-console": 0,
-    "no-plusplus": 0,
-    "comma-dangle": 0,
     "arrow-parens": 0,
+    "comma-dangle": 0,
     "global-require": 0,
-    "no-param-reassign": 0,
-    "max-len": ["error", 120],
-    "no-restricted-syntax": 0,
-    "object-curly-spacing": 0,
-    "no-underscore-dangle": 0,
     "import/no-named-as-default": 0,
+    "max-len": ["error", 120],
+    "no-console": 0,
+    "no-param-reassign": 0,
+    "no-plusplus": 0,
+    "no-restricted-syntax": 0,
+    "no-underscore-dangle": 0,
+    "object-curly-spacing": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
-    "react/prefer-stateless-function": 0 //enable
+    "react/prefer-stateless-function": 0, //enable later
+    "spaced-comment": 0
   },
   "settings": {
     "import/resolver": {

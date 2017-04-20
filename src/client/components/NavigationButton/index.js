@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {NavLink} from 'react-router-dom';
 import {lightGreen600} from 'material-ui/styles/colors';
 
 import FlatButton from '../FlatButton';
@@ -22,11 +22,11 @@ class NavigationButton extends React.Component {
     const buttonStyle = {color: 'white', marginLeft: 0, marginRight: 1};
 
     return (
-      <Link to={to} onlyActiveOnIndex={to === '/'} activeStyle={activeStyle}>
+      <NavLink to={to} activeStyle={activeStyle}>
         <FlatButton label={label} style={buttonStyle}>
           {React.Children.toArray(this.props.children)}
         </FlatButton>
-      </Link>
+      </NavLink>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -15,7 +15,7 @@ export default class LoginForm extends React.Component {
 
   render() {
     const actions = [
-      <Link to="/">
+      <Link to="/servers">
         <RaisedButton label="Ok" secondary keyboardFocused />,
       </Link>
     ];

@@ -5,10 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {IntlProvider} from 'react-intl';
-import {browserHistory} from 'react-router';
 import {AppContainer} from 'react-hot-loader';
 import {syncHistoryWithStore} from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import createBrowserHistory from 'history/createBrowserHistory';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // global styles
@@ -24,7 +24,7 @@ injectTapEventPlugin();
 
 api.setEndpoint('/api');
 
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 const render = (AppRouter) => {
   ReactDOM.render(

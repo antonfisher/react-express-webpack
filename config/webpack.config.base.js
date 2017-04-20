@@ -14,6 +14,7 @@ module.exports = {
     app: './src/client/index.js',
     vendor: [
       'babel-polyfill',
+      'history',
       'immutable',
       'material-ui',
       'prop-types',
@@ -22,7 +23,7 @@ module.exports = {
       'react-hot-loader',
       'react-intl',
       'react-redux',
-      'react-router',
+      'react-router-dom',
       'react-router-redux',
       'react-tap-event-plugin',
       'redux',
