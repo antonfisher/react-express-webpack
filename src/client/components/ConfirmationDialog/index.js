@@ -6,6 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from '../FlatButton';
 
 class ConfirmationDialog extends React.Component {
+  static NAME = 'ConfirmationDialog';
+
   static propTypes = {
     open: PropTypes.bool.isRequired,
     onHideModal: PropTypes.func.isRequired,

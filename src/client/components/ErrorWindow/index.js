@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Window from '../Window';
 
 class ErrorWindow extends React.Component {
+  static NAME = 'ErrorWindow';
+
   static propTypes = {
     open: PropTypes.bool.isRequired,
     message: PropTypes.string.isRequired,

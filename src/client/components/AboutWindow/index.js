@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Window from '../Window';
 
 class AboutWindow extends React.Component {
+  static NAME = 'AboutWindow';
+
   static propTypes = {
     open: PropTypes.bool.isRequired,
     onHideModal: PropTypes.func.isRequired

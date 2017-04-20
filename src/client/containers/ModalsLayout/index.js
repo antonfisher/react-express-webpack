@@ -21,8 +21,15 @@ export class ModalsLayout extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this._modalComponentsMap = modalComponentList
-      .reduce((acc, item) => Object.assign({}, acc, {[item.name]: item}), {});
+
+    this._modalComponentsMap = {};
+    modalComponentList.forEach((component) => {
+      if (component.NAME) {
+        this._modalComponentsMap[component.NAME] = component;
+      } else {
+        console.warn(`Component must have "NAME" property to be used as modal window: ${component}`);
+      }
+    });
   }
 
   renderModalComponent(key, props) {

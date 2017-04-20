@@ -18,7 +18,7 @@ export class App extends React.Component {
 
     return (
       <section>
-        <Paper zDepth={1} style={{position: 'fixed', width: '100%'}}>
+        <Paper zDepth={1} style={{position: 'fixed', width: '100%', zIndex: 10}}>
           <AppBar>
             <AppMenu />
           </AppBar>

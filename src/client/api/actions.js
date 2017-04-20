@@ -35,7 +35,7 @@ export function apiGetServers(callback) {
       })
       .catch((error) => {
         dispatch(apiRequestFinished({requestId, error}));
-        dispatch(showModal({key: ErrorWindow.name, props: {message: error.message}}));
+        dispatch(showModal({key: ErrorWindow.NAME, props: {message: error.message}}));
       });
   };
 }
@@ -54,7 +54,7 @@ export function apiAddServer(data, callback) {
       })
       .catch((error) => {
         dispatch(apiRequestFinished({requestId, error}));
-        dispatch(showModal({key: ErrorWindow.name, props: {message: error.message}}));
+        dispatch(showModal({key: ErrorWindow.NAME, props: {message: error.message}}));
       });
   };
 }

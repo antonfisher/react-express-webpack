@@ -78,15 +78,15 @@ export class AppMenu extends React.Component {
 function mapDispatchToProps(dispatch) {
   return {
     showAboutWindow() {
-      dispatch(showModal({key: AboutWindow.name}));
+      dispatch(showModal({key: AboutWindow.NAME}));
     },
     showLogoutConfirmation(props) {
-      dispatch(showModal({key: ConfirmationDialog.name, props}));
+      dispatch(showModal({key: ConfirmationDialog.NAME, props}));
     },
     doLogout(callback) { // get rid of callback here
       dispatch(apiGetServers(callback));
       setTimeout(() => {
-        dispatch(showModal({key: AboutWindow.name}));
+        dispatch(showModal({key: AboutWindow.NAME}));
       }, 1500);
     }
   };
