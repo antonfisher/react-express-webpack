@@ -47,15 +47,18 @@ logger.expressMiddleware = function expressMiddleware(req, res, next) {
 
   logger.info(defaultMessage);
 
-  req.on('end', () => {
-    const message = `${defaultMessage} - ${res.statusCode} - ${(Date.now() - startTimestemp) / 1000}s`;
+  const printExecutionTime = (statusCode = '') => {
+    const message = `${defaultMessage} - ${statusCode} - ${(Date.now() - startTimestemp) / 1000}s`;
     if (res.statusCode < 400) {
       logger.info(message);
     } else {
       logger.warn(message);
     }
     clearInterval(intervalId);
-  });
+  };
+
+  req.on('end', () => printExecutionTime(res.statusCode));
+  req.on('close', () => printExecutionTime('[closed by user]'));
 
   return next();
 };
