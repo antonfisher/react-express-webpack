@@ -11,27 +11,7 @@ const extractTextPlugin = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    app: './src/client/index.js',
-    vendor: [
-      'babel-polyfill',
-      'history',
-      'immutable',
-      'material-ui',
-      'prop-types',
-      'react',
-      'react-dom',
-      'react-hot-loader',
-      'react-intl',
-      'react-redux',
-      'react-router-dom',
-      'react-router-redux',
-      'react-tap-event-plugin',
-      'redux',
-      'redux-actions',
-      'redux-logger',
-      'redux-thunk',
-      'whatwg-fetch'
-    ]
+    app: './src/client/index.js'
   },
   output: {
     publicPath,
@@ -72,11 +52,16 @@ module.exports = {
   },
   plugins: [
     extractTextPlugin,
+    new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: '[name].js',
-      minChunks: Infinity
-    }),
+      minChunks: (module) => {
+        if (module.resource && (/^.*\.(css|scss)$/).test(module.resource)) {
+          return false;
+        }
+        return (module.context && module.context.includes('node_modules'));
+      }
+    })
   ],
   resolve: {
     modules: [

@@ -13,11 +13,6 @@ module.exports = Object.assign({}, baseConfig, {
         warnings: false
       }
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
