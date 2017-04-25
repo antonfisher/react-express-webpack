@@ -7,20 +7,27 @@ class ErrorWindow extends React.Component {
 
   static propTypes = {
     open: PropTypes.bool.isRequired,
-    message: PropTypes.string.isRequired,
-    onHideModal: PropTypes.func.isRequired
+    onHideModal: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    message: PropTypes.string,
+    explanation: PropTypes.string
   };
 
   static defaultProps = {
-    message: 'An error occurred lol.'
+    title: 'Error',
+    message: 'Unnamed error occurred',
+    explanation: ''
   };
 
   render() {
-    const {open, message, onHideModal} = this.props;
+    const {open, title, message, explanation, onHideModal} = this.props;
 
     return (
-      <Window title="Error" open={open} onHideModal={onHideModal}>
+      <Window title={title} open={open} onHideModal={onHideModal}>
         {message}
+        <br />
+        <br />
+        {explanation}
       </Window>
     );
   }
