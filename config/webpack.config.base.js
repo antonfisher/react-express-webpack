@@ -10,9 +10,9 @@ const extractTextPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: {
-    app: './src/client/index.js'
-  },
+  entry: [
+    './src/client/index.js'
+  ],
   output: {
     publicPath,
     path: clientBuildPath,

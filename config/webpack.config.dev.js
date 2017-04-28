@@ -5,10 +5,10 @@ const {clientSourcePath} = require('./application.config');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = Object.assign({}, baseConfig, {
-  entry: Object.assign({}, baseConfig.entry, {
-    hotPath: 'react-hot-loader/patch',
-    hotClient: 'webpack-hot-middleware/client?http://localhost:3000&reload=true'
-  }),
+  entry: ([
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?http://localhost:3000&reload=true'
+  ]).concat(baseConfig.entry),
   output: Object.assign({}, baseConfig.output, {
     hotUpdateMainFilename: 'hot-update.[hash:6].json',
     hotUpdateChunkFilename: 'hot-update.[hash:6].js'
