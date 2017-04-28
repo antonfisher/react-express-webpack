@@ -6,19 +6,35 @@ React boilerplate with ES2015, Express.js, and Webpack 2
 
 ## Technologies
 
-- React (v15)
-- React Router (v4)
+- React (v15) + Redux (v3) + React Router (v4)
+- Express.js (v4) as production and development server
 - Webpack 2 (production and development configurations)
-- React Hot Loader (v3-beta)
-- Express.js as production and development server
 - SCSS support (+ sanitize.css included)
-- React Material UI example theme
-- Preconfigured ESLint (airbnb)
 - ES2015+
 
 ## Features
 - preconfigured router
+- React Material UI example theme
 - preconfigured modal windows
+- preconfigured ESLint (airbnb)
+- React Hot Loader (v3-beta)
+
+## Screenshots
+
+Demo UI view:
+![Demo view](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-ui-screenshot.png)
+
+Development `.js` bundles:
+![Development js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-stat-dev.png)
+
+Production `.js` bundles:
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-stat-prod.png)
+
+Development mode output:
+![Development console output](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-log-dev.png)
+
+Production mode output:
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-log-prod.png)
 
 ## Usage
 
@@ -27,6 +43,8 @@ React boilerplate with ES2015, Express.js, and Webpack 2
 git clone git@github.com:antonfisher/react-express-webpack2.git
 cd react-express-webpack2
 npm install
+#or
+yarn install
 ```
 
 ### Scripts
