@@ -32,21 +32,35 @@ function throwApiError(url, error, statusCode) {
 }
 
 /**
- * @param {String} url
  * @param {Object} params
  * @returns {Promise.<T>}
  * @private
  */
-function _request(url, params) {
-  return fetch(url, {...defaultParams, ...params})
+function _request(params) {
+  let requestUrl;
+  let requestParams;
+  if (typeof params === 'string') {
+    requestUrl = params;
+    requestParams = {};
+  } else {
+    const {url, ...restParams} = params;
+    requestUrl = url;
+    requestParams = restParams;
+  }
+
+  let rawResponse;
+  return fetch(requestUrl, {...defaultParams, ...requestParams})
     .then((response) => {
-      const json = response.json();
+      rawResponse = response;
+      return response.json();
+    })
+    .then((json) => {
       if (json && json.error) {
-        return throwApiError(url, json.error, response.status);
+        return throwApiError(requestUrl, json.error, rawResponse.status);
       }
       return json;
     })
-    .catch((error) => throwApiError(url, error.message));
+    .catch((error) => throwApiError(requestUrl, error.message, rawResponse.status));
 }
 
 // application api
@@ -56,15 +70,13 @@ function getStats() {
 }
 
 function addServer(payload) {
-  return _request(
-    `${endpoint}/servers`,
-    {
-      method: 'POST',
-      headers: new Headers({'content-type': 'application/json'}),
-      body: JSON.stringify(payload),
-      ...defaultParams
-    }
-  );
+  return _request({
+    url: `${endpoint}/servers`,
+    method: 'POST',
+    headers: new Headers({'content-type': 'application/json'}),
+    body: JSON.stringify(payload),
+    ...defaultParams
+  });
 }
 
 export default {
