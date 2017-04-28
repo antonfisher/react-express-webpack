@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Paper from 'material-ui/Paper';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -52,18 +51,6 @@ export class ServersPage extends React.Component {
             this.props.apiAddServer({name: this.addServerTextFieldValue});
           }}
         />
-        <section className={styles.serversContainer}>
-          {servers.map(({id, name}) => (
-            <Paper key={id} className={styles.serverContainer}>
-              {id}: {name}
-              <br />
-              <br />
-            </Paper>
-          ))}
-        </section>
-        <br />
-        <br />
-        <h3>Table</h3>
         <Table multiSelectable>
           <TableHeader>
             <TableRow displayBorder>
