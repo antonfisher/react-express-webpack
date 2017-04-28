@@ -18,7 +18,7 @@
   "devDependencies": {
     "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
-    "babel-eslint": "7.2.2",
+    "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
     "babel-preset-env": "1.4.0",
     "babel-preset-react": "6.24.1",
@@ -65,7 +65,7 @@
     "request": "2.81.0",
     "sanitize.css": "5.0.0",
     "webpack": "2.4.1",
-    "webpack-dev-middleware": "1.10.1",
+    "webpack-dev-middleware": "1.10.2",
     "webpack-hot-middleware": "2.18.0",
     "whatwg-fetch": "2.0.3",
     "winston": "2.3.1"
