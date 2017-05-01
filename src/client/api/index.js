@@ -24,7 +24,7 @@ function ApiError(url, message, statusCode) {
 /**
  * @param {String} url
  * @param {Error} error
- * @param {Number} statusCode
+ * @param {Number|undefined} statusCode
  * @throws {ApiError}
  */
 function throwApiError(url, error, statusCode) {
@@ -60,7 +60,7 @@ function _request(params) {
       }
       return json;
     })
-    .catch((error) => throwApiError(requestUrl, error.message, rawResponse.status));
+    .catch((error) => throwApiError(requestUrl, error.message));
 }
 
 // application api
