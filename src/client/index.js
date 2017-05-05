@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 import 'whatwg-fetch';
 
+import 'sanitize.css/sanitize.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
@@ -11,14 +13,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import createBrowserHistory from 'history/createBrowserHistory';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-// global styles
-import 'sanitize.css/sanitize.css';
-import './style.scss';
-
 import api from 'api/index';
 import store from './store';
 import Router from './router';
 import muiTheme from './muiTheme';
+
+// global styles
+import './style.scss';
 
 injectTapEventPlugin();
 
