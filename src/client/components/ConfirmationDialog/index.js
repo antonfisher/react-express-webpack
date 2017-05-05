@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import FlatButton from '../FlatButton';
+import FlatButton from 'components/FlatButton';
 
 class ConfirmationDialog extends React.Component {
   static NAME = 'ConfirmationDialog';

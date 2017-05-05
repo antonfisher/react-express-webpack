@@ -4,7 +4,7 @@ import {
   API_REQUEST_STARTED,
   API_REQUEST_FINISHED,
   API_DATA_SERVERS_LOADED
-} from './actions';
+} from 'api/actions';
 
 const initialState = Map({
   loading: false,

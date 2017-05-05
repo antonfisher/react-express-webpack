@@ -4,12 +4,12 @@ import {connect} from 'react-redux';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 
-import AppBar from '../AppBar';
-import AppMenu from '../AppMenu';
-import ModalsLayout from '../ModalsLayout';
-import NotFound from '../NotFound';
-import ServersPage from '../ServersPage';
-import ProgressBar from '../../components/ProgressBar';
+import AppBar from 'containers/AppBar';
+import AppMenu from 'containers/AppMenu';
+import ModalsLayout from 'containers/ModalsLayout';
+import NotFound from 'containers/NotFound';
+import ServersPage from 'containers/ServersPage';
+import ProgressBar from 'components/ProgressBar';
 
 export class App extends React.Component {
   static propTypes = {

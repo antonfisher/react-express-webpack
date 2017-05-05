@@ -15,10 +15,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import 'sanitize.css/sanitize.css';
 import './style.scss';
 
+import api from 'api/index';
 import store from './store';
 import Router from './router';
 import muiTheme from './muiTheme';
-import api from './api/index';
 
 injectTapEventPlugin();
 

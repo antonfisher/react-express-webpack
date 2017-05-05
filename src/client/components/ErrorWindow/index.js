@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Window from '../Window';
+
+import Window from 'components/Window';
 
 class ErrorWindow extends React.Component {
   static NAME = 'ErrorWindow';

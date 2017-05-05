@@ -6,7 +6,7 @@ import ActionSearchIcon from 'material-ui/svg-icons/action/search';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import AirplanemodeActiveIcon from 'material-ui/svg-icons/device/airplanemode-active';
 
-import NavigationButton from '../../components/NavigationButton';
+import NavigationButton from 'components/NavigationButton';
 
 export default class AppBar extends React.Component {
   static propTypes = {

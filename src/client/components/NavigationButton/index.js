@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom';
 import {lightGreen600} from 'material-ui/styles/colors';
 
-import FlatButton from '../FlatButton';
+import FlatButton from 'components/FlatButton';
 
 class NavigationButton extends React.Component {
   static propTypes = {

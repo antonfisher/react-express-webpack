@@ -5,7 +5,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import {FormattedMessage, FormattedRelative} from 'react-intl';
-import {apiAddServer, apiGetServers} from '../../api/actions';
+
+import {apiAddServer, apiGetServers} from 'api/actions';
+
 import styles from './serversPage.scss';
 
 export class ServersPage extends React.Component {

@@ -1,5 +1,6 @@
 import {OrderedMap} from 'immutable';
-import {SHOW_MODAL, ANIMATED_REMOVE_MODAL, REMOVE_MODAL} from './actions';
+
+import {SHOW_MODAL, ANIMATED_REMOVE_MODAL, REMOVE_MODAL} from 'containers/ModalsLayout/actions';
 
 const initialState = OrderedMap({});
 

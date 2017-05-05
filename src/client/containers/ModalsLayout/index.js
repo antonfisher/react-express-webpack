@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {hideModal} from './actions';
-import AboutWindow from '../../components/AboutWindow';
-import ConfirmationDialog from '../../components/ConfirmationDialog';
-import ErrorWindow from '../../components/ErrorWindow';
+import {hideModal} from 'containers/ModalsLayout/actions';
+import AboutWindow from 'components/AboutWindow';
+import ConfirmationDialog from 'components/ConfirmationDialog';
+import ErrorWindow from 'components/ErrorWindow';
 
 const modalComponentList = [
   AboutWindow,

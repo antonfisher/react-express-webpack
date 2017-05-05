@@ -9,10 +9,10 @@ import ActionInfoOutlineIcon from 'material-ui/svg-icons/action/info-outline';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
-import {showModal} from '../ModalsLayout/actions';
-import {apiGetServers} from '../../api/actions';
-import AboutWindow from '../../components/AboutWindow';
-import ConfirmationDialog from '../../components/ConfirmationDialog';
+import {showModal} from 'containers/ModalsLayout/actions';
+import {apiGetServers} from 'api/actions';
+import AboutWindow from 'components/AboutWindow';
+import ConfirmationDialog from 'components/ConfirmationDialog';
 
 export class AppMenu extends React.Component {
   static propTypes = {

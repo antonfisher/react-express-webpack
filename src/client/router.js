@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import App from './containers/App';
-import LoginForm from './containers/LoginForm';
+import App from 'containers/App';
+import LoginForm from 'containers/LoginForm';
 
 export default function ({history}) { // eslint-disable-line react/prop-types
   return (
