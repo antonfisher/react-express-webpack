@@ -27,7 +27,7 @@ module.exports = Object.assign({}, baseConfig, {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
+        minifyURLs: true
       }
     })
   ])

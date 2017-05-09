@@ -21,5 +21,5 @@ export default getMuiTheme({
   },
   button: {
     height: 36
-  },
+  }
 });

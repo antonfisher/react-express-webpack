@@ -21,5 +21,5 @@ module.exports = Object.assign({}, baseConfig, {
       inject: true,
       template: resolve(clientSourcePath, 'index.html')
     })
-  ]),
+  ])
 });

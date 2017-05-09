@@ -20,7 +20,7 @@ module.exports = function setup(app) {
   app.post('/api/servers', (req, res) => {
     if (!req.body.name) {
       return res.json({
-        error: 'cannot add server with empty name',
+        error: 'cannot add server with empty name'
       });
     }
     return setTimeout(() => {
