@@ -1,5 +1,3 @@
-const {resolve} = require('path');
-const request = require('request');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -14,13 +12,4 @@ module.exports = function setup(app) {
   }));
 
   app.use(webpackHotMiddleware(compiler));
-
-  // fix browser history router
-  app.get('*', (req, res) => {
-    if (req.url !== '/' && !req.url.includes('.')) {
-      request(`http://localhost:${process.env.APP_PORT}/`, (error, response, body) => res.end(body));
-    } else {
-      res.sendFile(resolve(compiler.outputPath, 'index.html'));
-    }
-  });
 };
