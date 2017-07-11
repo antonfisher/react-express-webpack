@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const {clientSourcePath} = require('./application.config');
 const baseConfig = require('./webpack.config.base');
 
@@ -19,7 +20,9 @@ module.exports = Object.assign({}, baseConfig, {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: resolve(clientSourcePath, 'index.html')
-    })
+      template: resolve(clientSourcePath, 'index.html'),
+      alwaysWriteToDisk: true
+    }),
+    new HtmlWebpackHarddiskPlugin()
   ])
 });
