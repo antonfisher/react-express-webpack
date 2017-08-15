@@ -1,4 +1,4 @@
-React boilerplate with ES2015, Express.js, and Webpack 2
+React boilerplate with ES2015, Express.js, and Webpack
 
 [![Build Status](https://travis-ci.org/antonfisher/react-express-webpack2.svg?branch=master)](https://travis-ci.org/antonfisher/react-express-webpack2)
 [![Dependency Status](https://dependencyci.com/github/antonfisher/react-express-webpack2/badge)](https://dependencyci.com/github/antonfisher/react-express-webpack2)
@@ -8,7 +8,7 @@ React boilerplate with ES2015, Express.js, and Webpack 2
 
 - React (v15) + Redux (v3) + React Router (v4)
 - Express.js (v4) as production and development server
-- Webpack 2 (production and development configurations)
+- Webpack 3 (production and development configurations)
 - SCSS support (+ sanitize.css included)
 - ES2015+
 
@@ -63,6 +63,12 @@ npm start
 
 # run lint
 npm run lint
+```
+
+### Usage
+```bash
+# run on a different port
+APP_PORT=3001 npm run dev
 ```
 
 ## ToDo

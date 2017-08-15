@@ -9,10 +9,6 @@
     "airbnb"
   ],
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "jsx": true
-  },
-  "ecmaVersion": 6,
   "parserOptions": {
     "sourceType": "module"
   },

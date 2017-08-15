@@ -10,7 +10,9 @@ const compiler = webpack(webpackConfig);
 module.exports = function setup(app) {
   app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
-    stats: true
+    stats: {
+      colors: true
+    }
   }));
 
   app.use(webpackHotMiddleware(compiler));
