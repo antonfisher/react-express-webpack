@@ -1,8 +1,8 @@
 React boilerplate with ES2015, Express.js, and Webpack
 
-[![Build Status](https://travis-ci.org/antonfisher/react-express-webpack2.svg?branch=master)](https://travis-ci.org/antonfisher/react-express-webpack2)
-[![Dependency Status](https://dependencyci.com/github/antonfisher/react-express-webpack2/badge)](https://dependencyci.com/github/antonfisher/react-express-webpack2)
-[![bitHound Overall Score](https://www.bithound.io/github/antonfisher/react-express-webpack2/badges/score.svg)](https://www.bithound.io/github/antonfisher/react-express-webpack2)
+[![Build Status](https://travis-ci.org/antonfisher/react-express-webpack.svg?branch=master)](https://travis-ci.org/antonfisher/react-express-webpack)
+[![Dependency Status](https://dependencyci.com/github/antonfisher/react-express-webpack/badge)](https://dependencyci.com/github/antonfisher/react-express-webpack)
+[![bitHound Overall Score](https://www.bithound.io/github/antonfisher/react-express-webpack/badges/score.svg)](https://www.bithound.io/github/antonfisher/react-express-webpack)
 
 ## Technologies
 
@@ -23,30 +23,30 @@ React boilerplate with ES2015, Express.js, and Webpack
 
 Demo UI view:
 
-![Demo view](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-ui-screenshot.png)
+![Demo view](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-ui-screenshot.png)
 
 Development `.js` bundles:
 
-![Development js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-stat-dev.png)
+![Development js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-stat-dev.png)
 
 Production `.js` bundles:
 
-![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-stat-prod.png)
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-stat-prod.png)
 
 Development mode output:
 
-![Development console output](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-log-dev.png)
+![Development console output](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-log-dev.png)
 
 Production mode output:
 
-![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack2/docs/images/rew2-log-prod.png)
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-log-prod.png)
 
 ## Usage
 
 ### Installation
 ```bash
-git clone git@github.com:antonfisher/react-express-webpack2.git
-cd react-express-webpack2
+git clone git@github.com:antonfisher/react-express-webpack.git
+cd react-express-webpack
 npm install
 #or
 yarn install
