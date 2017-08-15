@@ -1,8 +1,14 @@
 {
-  "version": "1.0.2",
-  "author": "Anton Fisher <a.fschr@gmail.com>",
+  "version": "1.0.3",
+  "author": "Anton Fisher <a.fschr@gmail.com> (http://antonfisher.com)",
+  "description": "React boilerplate with ES2015, Express.js, and Webpack 3",
+  "license": "MIT",
   "engines": {
-    "node": "6.9"
+    "node": "8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonfisher/react-express-webpack.git"
   },
   "scripts": {
     "dev": "NODE_ENV=development node ./src/server",
