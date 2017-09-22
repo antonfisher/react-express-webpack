@@ -48,8 +48,11 @@ Production mode output:
 git clone git@github.com:antonfisher/react-express-webpack.git
 cd react-express-webpack
 npm install
-#or
+# or
 yarn install
+
+# remove boiler plate git references
+rm ./.git
 ```
 
 ### Scripts
