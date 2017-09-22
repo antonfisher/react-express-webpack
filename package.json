@@ -1,10 +1,10 @@
 {
-  "version": "1.0.3",
+  "version": "1.1.0",
   "author": "Anton Fisher <a.fschr@gmail.com> (http://antonfisher.com)",
   "description": "React boilerplate with ES2015, Express.js, and Webpack 3",
   "license": "MIT",
   "engines": {
-    "node": "8.3.0"
+    "node": "8.4.0"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,10 @@
     "build:client": "NODE_ENV=production webpack -p --display-error-details --config=config/webpack.config.prod.js",
     "build:server": "cp -r src/server build/server",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern node_modules -- .",
-    "test": "exit 1"
+    "test": "exit 1",
+    "release:patch": "npx standard-version -r patch && git push --follow-tags origin master",
+    "release:minor": "npx standard-version -r minor && git push --follow-tags origin master",
+    "release:major": "npx standard-version -r major && git push --follow-tags origin master"
   },
   "postcss": {},
   "devDependencies": {

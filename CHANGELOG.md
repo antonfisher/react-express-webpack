@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/antonfisher/react-express-webpack/compare/v1.0.3...v1.1.0) (2017-09-22)
+
+
+### Features
+
+* add ip to logger output, don't log query starting ([88c589f](https://github.com/antonfisher/react-express-webpack/commit/88c589f))
+* add unhandled errors handling, rename APP_PORT to HTTP_PORT, log app env ([8584748](https://github.com/antonfisher/react-express-webpack/commit/8584748))
+* remove separated app config file ([ce0d66f](https://github.com/antonfisher/react-express-webpack/commit/ce0d66f))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/antonfisher/react-express-webpack/compare/v1.0.0...v1.0.2) (2017-04-28)
 
