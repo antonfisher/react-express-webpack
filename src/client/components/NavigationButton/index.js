@@ -9,20 +9,22 @@ class NavigationButton extends React.Component {
   static propTypes = {
     to: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    children: PropTypes.node
+    children: PropTypes.node,
+    exact: PropTypes.bool
   };
 
   static defaultProps = {
-    children: null
+    children: null,
+    exact: false
   };
 
   render() {
-    const {to, label} = this.props;
+    const {to, label, ...props} = this.props;
     const activeStyle = {backgroundColor: lightGreen600};
     const buttonStyle = {color: 'white', marginLeft: 0, marginRight: 1};
 
     return (
-      <NavLink to={to} activeStyle={activeStyle}>
+      <NavLink to={to} activeStyle={activeStyle} {...props}>
         <FlatButton label={label} style={buttonStyle}>
           {React.Children.toArray(this.props.children)}
         </FlatButton>

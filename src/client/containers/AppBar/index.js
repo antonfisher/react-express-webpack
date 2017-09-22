@@ -20,8 +20,8 @@ export default class AppBar extends React.Component {
       <Toolbar>
         <ToolbarGroup style={{paddingLeft: 20}} firstChild>
           <AirplanemodeActiveIcon color="white" style={{height: 40, width: 40, marginRight: 30}} />
-          <NavigationButton to="/servers" label="Servers" />
-          <NavigationButton to="/users" label="Users" />
+          <NavigationButton to="/" label="Servers" exact />
+          <NavigationButton to="/users" label="Users" exact />
         </ToolbarGroup>
         <ToolbarGroup>
           <TextField

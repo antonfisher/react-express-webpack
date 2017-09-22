@@ -29,9 +29,9 @@ export class App extends React.Component {
         </Paper>
         <section style={{paddingTop: 50}}>
           <Switch>
-            <Route path="/servers" component={ServersPage} />
-            <Route path="/users" name="home-users" component={NotFound} />
-            <Redirect to="/servers" />
+            <Route exact path="/" component={ServersPage} />
+            <Route exact path="/users" name="home-users" component={NotFound} />
+            <Redirect to="/" />
           </Switch>
         </section>
         <ModalsLayout />
