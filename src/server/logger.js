@@ -8,16 +8,18 @@ const LOG_FILE_PATH = (
     ? path.join(homedir(), LOG_FILE_NAME)
     : path.join(__dirname, '..', '..', LOG_FILE_NAME)
 );
+const LOG_LEVEL = process.env.LOG_LEVEL || (process.env.NODE_ENV === 'production' ? 'verbose' : 'debug');
 
 const logger = new Logger({
   transports: [
     new Console({
-      level: 'debug',
+      level: LOG_LEVEL,
       colorize: true,
       timestamp: true,
       prettyPrint: true
     }),
     new File({
+      level: LOG_LEVEL,
       filename: LOG_FILE_PATH,
       handleExceptions: true,
       humanReadableUnhandledException: true,
@@ -35,17 +37,16 @@ logger.expressMiddleware = function expressMiddleware(req, res, next) {
     return next();
   }
 
-  const defaultMessage = `${req.method} ${req.url}`;
+  const ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+  const defaultMessage = `${ip} - ${req.method} ${req.url}`;
   const startTimestemp = Date.now();
-  const waitingTimePrintInterval = 1000;
+  const waitingTimePrintInterval = 5000;
 
   let waitingTime = 0;
   const intervalId = setInterval(() => {
     waitingTime += waitingTimePrintInterval;
     logger.verbose(`${defaultMessage} - wait for ${waitingTime / 1000}s...`);
   }, waitingTimePrintInterval);
-
-  logger.info(defaultMessage);
 
   const printExecutionTime = (statusCode = '') => {
     const message = `${defaultMessage} - ${statusCode} - ${(Date.now() - startTimestemp) / 1000}s`;
