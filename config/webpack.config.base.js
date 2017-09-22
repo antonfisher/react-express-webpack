@@ -1,6 +1,6 @@
+const {resolve, join} = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const {publicPath, clientSourcePath, clientBuildPath} = require('./application.config');
 
 const IS_DEV = (process.env.NODE_ENV !== 'production');
 
@@ -14,8 +14,8 @@ module.exports = {
     './src/client/index.js'
   ],
   output: {
-    publicPath,
-    path: clientBuildPath,
+    publicPath: '/',
+    path: resolve(__dirname, '..', 'build', 'client'),
     filename: '[name].js'
   },
   module: {
@@ -48,6 +48,12 @@ module.exports = {
           options: {sourceMap: IS_DEV}
         }]
       })
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      loader: 'file-loader'
+    }, {
+      test: /\.(gif)$/,
+      loader: 'file-loader'
     }]
   },
   plugins: [
@@ -65,8 +71,8 @@ module.exports = {
   ],
   resolve: {
     modules: [
-      clientSourcePath,
-      'node_modules'
+      'node_modules',
+      join('src', 'client')
     ]
   }
 };

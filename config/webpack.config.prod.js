@@ -1,7 +1,6 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {clientSourcePath} = require('./application.config');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = Object.assign({}, baseConfig, {
@@ -16,7 +15,7 @@ module.exports = Object.assign({}, baseConfig, {
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
-      template: resolve(clientSourcePath, 'index.html'),
+      template: resolve(__dirname, '..', 'src', 'client', 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
