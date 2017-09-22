@@ -4,9 +4,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import App from 'containers/App';
 import LoginForm from 'containers/LoginForm';
 
-export default function ({history}) { // eslint-disable-line react/prop-types
+export default function () {
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter>
       <Switch>
         <Route path="/login" name="login" component={LoginForm} />
         <Route path="/" name="home" component={App} />
