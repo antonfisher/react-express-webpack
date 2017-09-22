@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "NODE_ENV=development node ./src/server",
     "start": "NODE_ENV=production node ./build/server",
+    "preversion": "npm run lint",
     "prebuild": "mkdir -p ./build; rm -rf ./build/*",
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production webpack -p --display-error-details --config=config/webpack.config.prod.js",

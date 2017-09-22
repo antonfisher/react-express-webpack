@@ -63,13 +63,10 @@ npm start
 
 # run lint
 npm run lint
-```
 
-### Usage
-```bash
 # run on a different port
-APP_PORT=3001 npm run dev
+HTTP_PORT=3001 npm run dev
 ```
 
-## ToDo
-- [ ] tests
+## License
+MIT License. Free use and change.
