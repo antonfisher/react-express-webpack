@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Anton Fisher <a.fschr@gmail.com> (http://antonfisher.com)",
   "description": "React boilerplate with ES2015, Express.js, and Webpack 3",
   "license": "MIT",
