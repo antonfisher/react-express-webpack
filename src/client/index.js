@@ -19,6 +19,11 @@ import muiTheme from './muiTheme';
 // global styles
 import './style.scss';
 
+// apply polyfill
+if (!window.Intl) {
+  window.Intl = import('intl');
+}
+
 injectTapEventPlugin();
 
 api.setEndpoint('/api');
