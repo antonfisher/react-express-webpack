@@ -19,7 +19,7 @@ class Window extends React.Component {
 
     const props = {
       actions: [
-        <RaisedButton label="Close" onTouchTap={onHideModal} secondary keyboardFocused />
+        <RaisedButton label="Close" onClick={onHideModal} secondary keyboardFocused />
       ],
       ...this.props
     };

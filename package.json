@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Anton Fisher <a.fschr@gmail.com> (http://antonfisher.com)",
   "description": "React boilerplate with ES2015, Express.js, and Webpack 3",
   "license": "MIT",
@@ -68,7 +68,6 @@
     "react-redux": "5.0.6",
     "react-router-dom": "4.2.2",
     "react-router-redux": "4.0.8",
-    "react-tap-event-plugin": "2.0.1",
     "redux": "3.7.2",
     "redux-actions": "2.2.1",
     "redux-logger": "3.0.6",

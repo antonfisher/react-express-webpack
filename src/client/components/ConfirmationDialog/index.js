@@ -28,8 +28,8 @@ class ConfirmationDialog extends React.Component {
     const onCancel = () => (this.props.onCancel ? this.props.onCancel(onHideModal) : onHideModal());
 
     const actions = [
-      <FlatButton label="Cancel" onTouchTap={onCancel} />,
-      <RaisedButton label="Ok" onTouchTap={onOk} primary keyboardFocused />
+      <FlatButton label="Cancel" onClick={onCancel} />,
+      <RaisedButton label="Ok" onClick={onOk} primary keyboardFocused />
     ];
 
     return (

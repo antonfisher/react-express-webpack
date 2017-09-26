@@ -61,13 +61,13 @@ export class AppMenu extends React.Component {
           <MenuItem
             primaryText="Log out"
             leftIcon={<ActionExitToAppIcon />}
-            onTouchTap={this.onShowLogoutConfirmation}
+            onClick={this.onShowLogoutConfirmation}
           />
           <MenuItem primaryText="Help" leftIcon={<ActionHelpOutlineIcon />} />
           <MenuItem
             primaryText="About"
             leftIcon={<ActionInfoOutlineIcon />}
-            onTouchTap={this.onShowAboutWindow}
+            onClick={this.onShowAboutWindow}
           />
         </IconMenu>
       </section>

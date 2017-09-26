@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {IntlProvider} from 'react-intl';
 import {AppContainer} from 'react-hot-loader';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import api from 'api/index';
@@ -23,8 +22,6 @@ import './style.scss';
 if (!window.Intl) {
   window.Intl = import('intl');
 }
-
-injectTapEventPlugin();
 
 api.setEndpoint('/api');
 

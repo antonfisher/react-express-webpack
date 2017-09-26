@@ -49,7 +49,7 @@ export class ServersPage extends React.Component {
         />
         <RaisedButton
           label={<FormattedMessage id="app.servers.addServer.button" defaultMessage="Add server" />}
-          onTouchTap={() => {
+          onClick={() => {
             this.props.apiAddServer({name: this.addServerTextFieldValue});
           }}
         />
