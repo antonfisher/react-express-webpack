@@ -6,7 +6,7 @@ React boilerplate with ES2015, Express.js, and Webpack
 
 ## Technologies
 
-- React (v15) + Redux (v3) + React Router (v4)
+- React (v16) + Redux (v3) + React Router (v4)
 - Express.js (v4) as production and development server
 - Webpack 3 (production and development configurations)
 - SCSS support (+ sanitize.css included)
@@ -27,19 +27,15 @@ Demo UI view:
 
 Development `.js` bundles:
 
-![Development js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-stat-dev.png)
+![Development js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew-stat-dev.png)
 
 Production `.js` bundles:
 
-![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-stat-prod.png)
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew-stat-prod.png)
 
-Development mode output:
+Production mode server output:
 
-![Development console output](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-log-dev.png)
-
-Production mode output:
-
-![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew2-log-prod.png)
+![Production js bundles](https://raw.githubusercontent.com/antonfisher/react-express-webpack/docs/images/rew-log-prod.png)
 
 ## Usage
 
