@@ -3,6 +3,7 @@ const defaultParams = {
 };
 
 let endpoint = '';
+
 function setEndpoint(value) {
   endpoint = value;
 }
