@@ -27,10 +27,12 @@
     "no-restricted-syntax": 0,
     "no-underscore-dangle": 0,
     "object-curly-spacing": ["error","never"],
+    "object-curly-newline": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/prefer-stateless-function": 0, //enable later
     "spaced-comment": 0,
+    "jsx-a11y/anchor-is-valid": 0, // remove after update
     "jsx-a11y/img-has-alt": 0 // remove after update
   },
   "settings": {
