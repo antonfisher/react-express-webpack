@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/antonfisher/react-express-webpack/compare/v1.2.0...v2.0.0) (2018-01-27)
+
+
+### Bug Fixes
+
+* move html-webpack-harddisk-plugin dependency to dev ([9fe7747](https://github.com/antonfisher/react-express-webpack/commit/9fe7747))
+* remove unused dependency 'history' ([75bc02f](https://github.com/antonfisher/react-express-webpack/commit/75bc02f))
+* remove unused gif file-loader rule ([f121d0b](https://github.com/antonfisher/react-express-webpack/commit/f121d0b))
+* use application logger in webpack-dev-middleware ([badfbc0](https://github.com/antonfisher/react-express-webpack/commit/badfbc0))
+
+
+### Features
+
+* remove react-tap-event-plugin dependency ([a6cd1e9](https://github.com/antonfisher/react-express-webpack/commit/a6cd1e9))
+* support for realy old browsers, add intl polyfill (closes [#2](https://github.com/antonfisher/react-express-webpack/issues/2)) ([94f4e95](https://github.com/antonfisher/react-express-webpack/commit/94f4e95))
+* update React to 16.2.0 ([4f9bd1b](https://github.com/antonfisher/react-express-webpack/commit/4f9bd1b))
+* upgrade to react 16 ([1f73233](https://github.com/antonfisher/react-express-webpack/commit/1f73233))
+* use flat componets/containers structure ([e44986b](https://github.com/antonfisher/react-express-webpack/commit/e44986b))
+* use prettier code formatter ([894f014](https://github.com/antonfisher/react-express-webpack/commit/894f014))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/antonfisher/react-express-webpack/compare/v1.1.0...v1.2.0) (2017-09-22)
 
