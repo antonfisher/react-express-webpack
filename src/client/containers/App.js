@@ -6,9 +6,9 @@ import Paper from 'material-ui/Paper';
 
 import AppBar from 'containers/AppBar';
 import AppMenu from 'containers/AppMenu';
-import ModalsLayout from 'containers/ModalsLayout';
+import ModalsLayout from 'containers/ModalsLayout/index';
 import NotFound from 'containers/NotFound';
-import ServersPage from 'containers/ServersPage';
+import ServersPage from 'containers/ServersPage/index';
 import ProgressBar from 'components/ProgressBar';
 
 export class App extends React.Component {
