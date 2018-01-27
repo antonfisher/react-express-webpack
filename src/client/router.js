@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import App from 'containers/App';
 import LoginForm from 'containers/LoginForm';
 
-export default function () {
+export default function() {
   return (
     <BrowserRouter>
       <Switch>

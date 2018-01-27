@@ -7,11 +7,7 @@ import AboutWindow from 'components/AboutWindow';
 import ConfirmationDialog from 'components/ConfirmationDialog';
 import ErrorWindow from 'components/ErrorWindow';
 
-const modalComponentList = [
-  AboutWindow,
-  ErrorWindow,
-  ConfirmationDialog
-];
+const modalComponentList = [AboutWindow, ErrorWindow, ConfirmationDialog];
 
 export class ModalsLayout extends React.Component {
   static propTypes = {
@@ -34,7 +30,11 @@ export class ModalsLayout extends React.Component {
 
   renderModalComponent(key, props) {
     const onHideModal = this.props.onHideModal.bind(this, {key});
-    return React.createElement(this._modalComponentsMap[key], {key, onHideModal, ...props});
+    return React.createElement(this._modalComponentsMap[key], {
+      key,
+      onHideModal,
+      ...props
+    });
   }
 
   render() {
@@ -45,11 +45,7 @@ export class ModalsLayout extends React.Component {
       children.push(this.renderModalComponent(key, props));
     }
 
-    return (
-      <section>
-        {children}
-      </section>
-    );
+    return <section>{children}</section>;
   }
 }
 

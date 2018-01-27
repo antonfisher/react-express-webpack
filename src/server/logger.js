@@ -3,11 +3,10 @@ const {homedir} = require('os');
 const {Logger, transports: {Console, File}} = require('winston');
 
 const LOG_FILE_NAME = '.application.log';
-const LOG_FILE_PATH = (
+const LOG_FILE_PATH =
   process.env.NODE_ENV === 'production'
     ? path.join(homedir(), LOG_FILE_NAME)
-    : path.join(__dirname, '..', '..', LOG_FILE_NAME)
-);
+    : path.join(__dirname, '..', '..', LOG_FILE_NAME);
 const LOG_LEVEL = process.env.LOG_LEVEL || (process.env.NODE_ENV === 'production' ? 'verbose' : 'debug');
 
 const logger = new Logger({
@@ -37,7 +36,7 @@ logger.expressMiddleware = function expressMiddleware(req, res, next) {
     return next();
   }
 
-  const ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const defaultMessage = `${ip} - ${req.method} ${req.url}`;
   const startTimestemp = Date.now();
   const waitingTimePrintInterval = 5000;

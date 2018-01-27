@@ -19,7 +19,7 @@ function ApiError(url, message, statusCode) {
   this.message = message;
   this.statusCode = statusCode || '';
   this.title = 'API Error';
-  this.stack = (new Error()).stack;
+  this.stack = new Error().stack;
 }
 
 /**

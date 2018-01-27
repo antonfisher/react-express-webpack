@@ -5,10 +5,10 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = Object.assign({}, baseConfig, {
-  entry: ([
+  entry: [
     'react-hot-loader/patch',
     `webpack-hot-middleware/client?http://localhost:${process.env.HTTP_PORT}&reload=true`
-  ]).concat(baseConfig.entry),
+  ].concat(baseConfig.entry),
   output: Object.assign({}, baseConfig.output, {
     hotUpdateMainFilename: 'hot-update.[hash:6].json',
     hotUpdateChunkFilename: 'hot-update.[hash:6].js'

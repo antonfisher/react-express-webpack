@@ -16,8 +16,8 @@ React boilerplate with ES2015, Express.js, and Webpack
 - preconfigured router
 - React Material UI example theme
 - preconfigured modal windows
-- preconfigured ESLint (airbnb)
-- React Hot Loader (v3-beta)
+- preconfigured eslint and Prettier code formatter
+- React Hot Loader
 
 ## Screenshots
 

@@ -34,11 +34,11 @@ export class ServersPage extends React.Component {
       <section style={{padding: 20}}>
         <h2>
           <FormattedMessage id="app.servers.title" defaultMessage="Servers" />
-          {serversLastUpdate &&
+          {serversLastUpdate && (
             <span className={styles.lastUpdate}>
               (updated <FormattedRelative value={serversLastUpdate} />)
             </span>
-          }
+          )}
         </h2>
         <TextField
           style={{marginRight: 10}}

@@ -19,17 +19,15 @@ const initialState = Map({
 export default function ApiReducer(state = initialState, action) {
   switch (action.type) {
     case API_REQUEST_STARTED:
-      return state
-        .setIn(['requests', action.payload.requestId], action.payload)
-        .set('loading', true);
+      return state.setIn(['requests', action.payload.requestId], action.payload).set('loading', true);
 
     case API_REQUEST_FINISHED:
       return state
         .removeIn(['requests', action.payload.requestId])
-        .set('loading', (state.get('requests').size > 1))
+        .set('loading', state.get('requests').size > 1)
         .setIn(
           ['errors', 'last'],
-          (action.payload.error ? action.payload.error.message : state.getIn(['errors', 'last']))
+          action.payload.error ? action.payload.error.message : state.getIn(['errors', 'last'])
         );
 
     case API_DATA_SERVERS_LOADED:

@@ -25,7 +25,8 @@ export function apiGetServers(callback) {
   return function dispatchApiGetServers(dispatch) {
     const requestId = guidGenerator.next().value;
     dispatch(apiRequestStarted({requestId}));
-    return api.getStats()
+    return api
+      .getStats()
       .then((data) => {
         dispatch(apiDataServersLoaded(data));
         dispatch(apiRequestFinished({requestId}));
@@ -35,10 +36,16 @@ export function apiGetServers(callback) {
       })
       .catch((error) => {
         dispatch(apiRequestFinished({requestId, error}));
-        dispatch(showModal({
-          key: ErrorWindow.NAME,
-          props: {title: error.title, message: error.message, explanation: `URL: ${error.url} ${error.statusCode}`}
-        }));
+        dispatch(
+          showModal({
+            key: ErrorWindow.NAME,
+            props: {
+              title: error.title,
+              message: error.message,
+              explanation: `URL: ${error.url} ${error.statusCode}`
+            }
+          })
+        );
       });
   };
 }
@@ -47,7 +54,8 @@ export function apiAddServer(data, callback) {
   return function dispatchApiAddServer(dispatch) {
     const requestId = guidGenerator.next().value;
     dispatch(apiRequestStarted({requestId}));
-    return api.addServer(data)
+    return api
+      .addServer(data)
       .then(() => {
         dispatch(apiGetServers());
         dispatch(apiRequestFinished({requestId}));
@@ -57,10 +65,16 @@ export function apiAddServer(data, callback) {
       })
       .catch((error) => {
         dispatch(apiRequestFinished({requestId, error}));
-        dispatch(showModal({
-          key: ErrorWindow.NAME,
-          props: {title: error.title, message: error.message, explanation: `URL: ${error.url} ${error.statusCode}`}
-        }));
+        dispatch(
+          showModal({
+            key: ErrorWindow.NAME,
+            props: {
+              title: error.title,
+              message: error.message,
+              explanation: `URL: ${error.url} ${error.statusCode}`
+            }
+          })
+        );
       });
   };
 }

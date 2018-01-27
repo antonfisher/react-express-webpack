@@ -58,17 +58,9 @@ export class AppMenu extends React.Component {
           anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
         >
-          <MenuItem
-            primaryText="Log out"
-            leftIcon={<ActionExitToAppIcon />}
-            onClick={this.onShowLogoutConfirmation}
-          />
+          <MenuItem primaryText="Log out" leftIcon={<ActionExitToAppIcon />} onClick={this.onShowLogoutConfirmation} />
           <MenuItem primaryText="Help" leftIcon={<ActionHelpOutlineIcon />} />
-          <MenuItem
-            primaryText="About"
-            leftIcon={<ActionInfoOutlineIcon />}
-            onClick={this.onShowAboutWindow}
-          />
+          <MenuItem primaryText="About" leftIcon={<ActionInfoOutlineIcon />} onClick={this.onShowAboutWindow} />
         </IconMenu>
       </section>
     );
@@ -83,7 +75,8 @@ function mapDispatchToProps(dispatch) {
     showLogoutConfirmation(props) {
       dispatch(showModal({key: ConfirmationDialog.NAME, props}));
     },
-    doLogout(callback) { // get rid of callback here
+    doLogout(callback) {
+      // get rid of callback here
       dispatch(apiGetServers(callback));
       setTimeout(() => {
         dispatch(showModal({key: AboutWindow.NAME}));
@@ -91,6 +84,5 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
-
 
 export default connect(null, mapDispatchToProps)(AppMenu);
