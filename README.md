@@ -44,10 +44,8 @@ Production mode server output:
 git clone git@github.com:antonfisher/react-express-webpack.git
 cd react-express-webpack
 npm install
-# or
-yarn install
 
-# remove boiler plate git references
+# remove boilerplate git references
 rm ./.git
 ```
 
