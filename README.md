@@ -60,6 +60,9 @@ npm run dev
 npm run build
 npm start
 
+# run prettier
+npm run prettier
+
 # run lint
 npm run lint
 
