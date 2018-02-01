@@ -3,6 +3,7 @@ import 'whatwg-fetch';
 
 import 'sanitize.css/sanitize.css';
 
+import intl from 'intl';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
@@ -20,7 +21,7 @@ import './style.scss';
 
 // apply polyfill
 if (!window.Intl) {
-  window.Intl = import('intl');
+  window.Intl = intl;
 }
 
 api.setEndpoint('/api');
