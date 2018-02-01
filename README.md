@@ -18,6 +18,7 @@ React boilerplate with ES2015, Express.js, and Webpack
 - preconfigured modal windows
 - preconfigured eslint and Prettier code formatter
 - React Hot Loader
+- Linux/MacOS/Windows
 
 ## Screenshots
 
