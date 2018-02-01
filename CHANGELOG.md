@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/antonfisher/react-express-webpack/compare/v2.0.0...v2.1.0) (2018-02-01)
+
+
+### Bug Fixes
+
+* always include Intl to main bundle ([7b9a36f](https://github.com/antonfisher/react-express-webpack/commit/7b9a36f))
+
+
+### Features
+
+* update packadge.json for windows support (closes [#3](https://github.com/antonfisher/react-express-webpack/issues/3)) ([2b8f7ac](https://github.com/antonfisher/react-express-webpack/commit/2b8f7ac))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/antonfisher/react-express-webpack/compare/v1.2.0...v2.0.0) (2018-01-27)
 
