@@ -1,23 +1,22 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./webpack.config.common');
 
 module.exports = merge(commonConfig, {
-  devtool: 'cheap-module-source-map',
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
+    new UglifyJsPlugin({
+      parallel: true,
+      extractComments: true
     }),
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
       template: resolve(__dirname, '..', 'src', 'client', 'index.html'),
+      //favicon: resolve(__dirname, '..', 'src', 'client', 'static', 'favicon.png'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
