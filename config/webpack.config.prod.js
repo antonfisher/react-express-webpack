@@ -1,11 +1,13 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const baseConfig = require('./webpack.config.base');
 
-module.exports = Object.assign({}, baseConfig, {
+const commonConfig = require('./webpack.config.common');
+
+module.exports = merge(commonConfig, {
   devtool: 'cheap-module-source-map',
-  plugins: baseConfig.plugins.concat([
+  plugins: [
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
@@ -29,5 +31,5 @@ module.exports = Object.assign({}, baseConfig, {
         minifyURLs: true
       }
     })
-  ])
+  ]
 });

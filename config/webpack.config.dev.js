@@ -1,20 +1,22 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const baseConfig = require('./webpack.config.base');
 
-module.exports = Object.assign({}, baseConfig, {
+const commonConfig = require('./webpack.config.common');
+
+module.exports = merge(commonConfig, {
   entry: [
     'react-hot-loader/patch',
     `webpack-hot-middleware/client?http://localhost:${process.env.HTTP_PORT}&reload=true`
-  ].concat(baseConfig.entry),
-  output: Object.assign({}, baseConfig.output, {
+  ],
+  output: {
     hotUpdateMainFilename: 'hot-update.[hash:6].json',
     hotUpdateChunkFilename: 'hot-update.[hash:6].js'
-  }),
+  },
   devtool: 'cheap-module-eval-source-map',
-  plugins: baseConfig.plugins.concat([
+  plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
@@ -25,5 +27,5 @@ module.exports = Object.assign({}, baseConfig, {
     new HtmlWebpackHarddiskPlugin({
       outputPath: resolve(__dirname, '..', 'build-dev', 'client')
     })
-  ])
+  ]
 });
