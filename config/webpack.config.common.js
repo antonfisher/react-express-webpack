@@ -75,5 +75,13 @@ module.exports = {
   ],
   resolve: {
     modules: ['node_modules', join('src', 'client')]
+  },
+  stats: {
+    assetsSort: '!size',
+    children: false,
+    chunks: false,
+    colors: true,
+    entrypoints: false,
+    modules: false
   }
 };
