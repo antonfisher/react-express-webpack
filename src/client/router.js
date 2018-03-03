@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import App from 'containers/App';
+import AppLayout from 'containers/AppLayout';
 import LoginForm from 'containers/LoginForm';
 
 export default function() {
@@ -9,7 +9,7 @@ export default function() {
     <BrowserRouter>
       <Switch>
         <Route path="/login" name="login" component={LoginForm} />
-        <Route path="/" name="home" component={App} />
+        <Route path="/" name="home" component={AppLayout} />
       </Switch>
     </BrowserRouter>
   );

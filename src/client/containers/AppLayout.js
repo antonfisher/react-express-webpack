@@ -11,7 +11,7 @@ import NotFound from 'containers/NotFound';
 import ServersPage from 'containers/ServersPage/index';
 import ProgressBar from 'components/ProgressBar';
 
-export class App extends React.Component {
+export class AppLayout extends React.Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired
   };
@@ -46,4 +46,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(AppLayout);
