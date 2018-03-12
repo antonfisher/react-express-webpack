@@ -7,10 +7,8 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const commonConfig = require('./webpack.config.common');
 
 module.exports = merge(commonConfig, {
-  entry: [
-    'react-hot-loader/patch',
-    `webpack-hot-middleware/client?http://localhost:${process.env.HTTP_PORT}&reload=true`
-  ],
+  mode: 'development',
+  entry: [`webpack-hot-middleware/client?http://localhost:${process.env.HTTP_PORT}&reload=true`],
   output: {
     hotUpdateMainFilename: 'hot-update.[hash:6].json',
     hotUpdateChunkFilename: 'hot-update.[hash:6].js'

@@ -4,12 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
-const extractTextPlugin = new ExtractTextPlugin({
-  filename: 'style.css',
-  disable: IS_DEV
-});
-
 module.exports = {
+  target: 'web',
   entry: ['./src/client/index.js'],
   output: {
     publicPath: '/',
@@ -29,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: extractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           fallback: {
             loader: 'style-loader',
             options: {sourceMap: IS_DEV}
@@ -61,20 +57,25 @@ module.exports = {
     ]
   },
   plugins: [
-    extractTextPlugin,
-    new webpack.EnvironmentPlugin(['NODE_ENV']),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: (module) => {
-        if (module.resource && /^.*\.(css|scss)$/.test(module.resource)) {
-          return false;
-        }
-        return module.context && module.context.includes('node_modules');
-      }
-    })
+    new ExtractTextPlugin({
+      filename: '[name].css',
+      disable: IS_DEV
+    }),
+    new webpack.EnvironmentPlugin(['NODE_ENV'])
   ],
   resolve: {
     modules: ['node_modules', join('src', 'client')]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
   },
   stats: {
     assetsSort: '!size',
