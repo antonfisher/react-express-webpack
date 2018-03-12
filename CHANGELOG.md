@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/antonfisher/react-express-webpack/compare/v2.1.0...v2.2.0) (2018-03-12)
+
+
+### Features
+
+* hide package-lock.json from git diff output ([6b63ff2](https://github.com/antonfisher/react-express-webpack/commit/6b63ff2))
+* upgrade to Webpack 4 ([f6224bc](https://github.com/antonfisher/react-express-webpack/commit/f6224bc))
+* use compact build output ([5d5bb55](https://github.com/antonfisher/react-express-webpack/commit/5d5bb55))
+* use last version of uglifyjs ([cd71f35](https://github.com/antonfisher/react-express-webpack/commit/cd71f35))
+* use react-hot-loader v4 ([121bda7](https://github.com/antonfisher/react-express-webpack/commit/121bda7))
+* use webpack merge for merging configs ([d765ec6](https://github.com/antonfisher/react-express-webpack/commit/d765ec6))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/antonfisher/react-express-webpack/compare/v2.0.0...v2.1.0) (2018-02-01)
 
