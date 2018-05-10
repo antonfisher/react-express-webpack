@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/antonfisher/react-express-webpack/compare/v2.2.0...v2.3.0) (2018-05-10)
+
+
+### Bug Fixes
+
+* move dev deps to dev deps ([e7a42bc](https://github.com/antonfisher/react-express-webpack/commit/e7a42bc))
+
+
+### Features
+
+* update deps, express@4.16.3, webpack@4.8.1, react@16.3.2 ([b5aa7fa](https://github.com/antonfisher/react-express-webpack/commit/b5aa7fa))
+* upgrade to prettier@1.12.1 ([299ddc3](https://github.com/antonfisher/react-express-webpack/commit/299ddc3))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/antonfisher/react-express-webpack/compare/v2.1.0...v2.2.0) (2018-03-12)
 
