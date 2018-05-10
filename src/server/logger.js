@@ -1,6 +1,9 @@
 const path = require('path');
 const {homedir} = require('os');
-const {Logger, transports: {Console, File}} = require('winston');
+const {
+  Logger,
+  transports: {Console, File}
+} = require('winston');
 
 const LOG_FILE_NAME = '.application.log';
 const LOG_FILE_PATH =
