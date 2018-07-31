@@ -85,4 +85,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(AppMenu);
+export default connect(
+  null,
+  mapDispatchToProps
+)(AppMenu);

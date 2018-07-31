@@ -63,4 +63,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalsLayout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ModalsLayout);

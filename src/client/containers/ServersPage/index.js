@@ -92,4 +92,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServersPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ServersPage);
