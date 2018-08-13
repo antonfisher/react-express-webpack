@@ -1,5 +1,5 @@
 const defaultParams = {
-  mode: 'none'
+  mode: 'cors'
 };
 
 let endpoint = '';
