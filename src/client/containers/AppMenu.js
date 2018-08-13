@@ -58,9 +58,9 @@ export class AppMenu extends React.Component {
           anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
         >
-          <MenuItem primaryText="Log out" leftIcon={<ActionExitToAppIcon />} onClick={this.onShowLogoutConfirmation} />
           <MenuItem primaryText="Help" leftIcon={<ActionHelpOutlineIcon />} />
           <MenuItem primaryText="About" leftIcon={<ActionInfoOutlineIcon />} onClick={this.onShowAboutWindow} />
+          <MenuItem primaryText="Log out" leftIcon={<ActionExitToAppIcon />} onClick={this.onShowLogoutConfirmation} />
         </IconMenu>
       </section>
     );
