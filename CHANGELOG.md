@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/antonfisher/react-express-webpack/compare/v2.3.0...v2.4.0) (2018-08-13)
+
+
+### Bug Fixes
+
+* add LICENSE file ([4e9886f](https://github.com/antonfisher/react-express-webpack/commit/4e9886f))
+* add plugin for the version of postcss ([431a293](https://github.com/antonfisher/react-express-webpack/commit/431a293))
+* disable 'add server' button while loading ([d277845](https://github.com/antonfisher/react-express-webpack/commit/d277845))
+* set default fetch mode to cors ([142dc78](https://github.com/antonfisher/react-express-webpack/commit/142dc78))
+* show Log Out item on the last position in menu ([507c4c6](https://github.com/antonfisher/react-express-webpack/commit/507c4c6))
+
+
+### Features
+
+* update winston logger to v3 ([8005871](https://github.com/antonfisher/react-express-webpack/commit/8005871))
+* use components names as file names instead of index.js ([ac0465f](https://github.com/antonfisher/react-express-webpack/commit/ac0465f))
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/antonfisher/react-express-webpack/compare/v2.2.0...v2.3.0) (2018-05-10)
 
