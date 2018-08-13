@@ -1,6 +1,7 @@
 const {resolve, join} = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
@@ -45,7 +46,11 @@ module.exports = {
             },
             {
               loader: 'postcss-loader',
-              options: {sourceMap: IS_DEV}
+              options: {
+                ident: 'postcss',
+                plugins: () => [postcssPresetEnv()],
+                sourceMap: IS_DEV
+              }
             }
           ]
         })
