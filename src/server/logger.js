@@ -1,35 +1,37 @@
 const path = require('path');
 const {homedir} = require('os');
-const {
-  Logger,
-  transports: {Console, File}
-} = require('winston');
+const winston = require('winston');
+const jsonStringify = require('fast-safe-stringify');
 
 const LOG_FILE_NAME = '.application.log';
 const LOG_FILE_PATH =
   process.env.NODE_ENV === 'production'
     ? path.join(homedir(), LOG_FILE_NAME)
     : path.join(__dirname, '..', '..', LOG_FILE_NAME);
-const LOG_LEVEL = process.env.LOG_LEVEL || (process.env.NODE_ENV === 'production' ? 'verbose' : 'debug');
 
-const logger = new Logger({
+const defaultFormats = [
+  winston.format.timestamp(),
+  winston.format.printf(
+    ({timestamp, level, message}) =>
+      `${timestamp} ${level}: ${typeof message === 'string' ? message : '\n' + jsonStringify(message, null, 4)}`
+  )
+];
+
+const logger = winston.createLogger({
   transports: [
-    new Console({
-      level: LOG_LEVEL,
-      colorize: true,
-      timestamp: true,
-      prettyPrint: true
+    new winston.transports.Console({
+      format: winston.format.combine(winston.format.colorize(), ...defaultFormats),
+      level: process.env.LOG_LEVEL_CONSOLE,
+      handleExceptions: true
     }),
-    new File({
-      level: LOG_LEVEL,
+    new winston.transports.File({
+      format: winston.format.combine(winston.format.uncolorize(), ...defaultFormats),
+      level: process.env.LOG_LEVEL_FILE,
       filename: LOG_FILE_PATH,
       handleExceptions: true,
-      humanReadableUnhandledException: true,
-      prettyPrint: true,
       tailable: true,
       maxsize: 10 * 1024 * 1024,
-      maxFiles: 10,
-      json: false
+      maxFiles: 5
     })
   ]
 });
@@ -47,8 +49,10 @@ logger.expressMiddleware = function expressMiddleware(req, res, next) {
   let waitingTime = 0;
   const intervalId = setInterval(() => {
     waitingTime += waitingTimePrintInterval;
-    logger.verbose(`${defaultMessage} - wait for ${waitingTime / 1000}s...`);
+    logger.warn(`${defaultMessage} - wait for ${waitingTime / 1000}s...`);
   }, waitingTimePrintInterval);
+
+  logger.info(defaultMessage);
 
   const printExecutionTime = (statusCode = '') => {
     const message = `${defaultMessage} - ${statusCode} - ${(Date.now() - startTimestemp) / 1000}s`;
@@ -57,11 +61,21 @@ logger.expressMiddleware = function expressMiddleware(req, res, next) {
     } else {
       logger.warn(message);
     }
-    clearInterval(intervalId);
   };
 
-  req.on('end', () => printExecutionTime(res.statusCode));
-  req.on('close', () => printExecutionTime('[closed by user]'));
+  req.on('end', () => {
+    clearInterval(intervalId);
+    if (!req.isProxy) {
+      printExecutionTime(res.statusCode);
+    }
+  });
+
+  req.on('close', () => {
+    clearInterval(intervalId);
+    if (!req.isProxy) {
+      printExecutionTime('[closed by user]');
+    }
+  });
 
   return next();
 };
