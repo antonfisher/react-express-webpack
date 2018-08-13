@@ -8,7 +8,7 @@ import {FormattedMessage, FormattedRelative} from 'react-intl';
 
 import {apiAddServer, apiGetServers} from 'api/actions';
 
-import styles from './serversPage.scss';
+import styles from './ServersPage.scss';
 
 export class ServersPage extends React.Component {
   static propTypes = {
