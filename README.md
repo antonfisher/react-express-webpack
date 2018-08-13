@@ -1,7 +1,6 @@
 React boilerplate with ES2015, Express.js, and Webpack
 
 [![Build Status](https://travis-ci.org/antonfisher/react-express-webpack.svg?branch=master)](https://travis-ci.org/antonfisher/react-express-webpack)
-[![bitHound Dependencies](https://www.bithound.io/github/antonfisher/react-express-webpack/badges/dependencies.svg)](https://www.bithound.io/github/antonfisher/react-express-webpack/master/dependencies/npm)
 [![GitHub license](https://img.shields.io/github/license/antonfisher/react-express-webpack.svg)](https://github.com/antonfisher/react-express-webpack/blob/master/LICENSE)
 
 ## Technologies
