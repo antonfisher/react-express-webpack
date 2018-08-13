@@ -12,6 +12,7 @@ import styles from './serversPage.scss';
 
 export class ServersPage extends React.Component {
   static propTypes = {
+    loading: PropTypes.bool.isRequired,
     servers: PropTypes.object.isRequired,
     apiAddServer: PropTypes.func.isRequired,
     apiGetServers: PropTypes.func.isRequired,
@@ -28,7 +29,7 @@ export class ServersPage extends React.Component {
   }
 
   render() {
-    const {servers, serversLastUpdate} = this.props;
+    const {loading, servers, serversLastUpdate} = this.props;
 
     return (
       <section style={{padding: 20}}>
@@ -48,6 +49,7 @@ export class ServersPage extends React.Component {
           hintText={<FormattedMessage id="app.servers.addServer.hintText" defaultMessage="Add server" />}
         />
         <RaisedButton
+          disabled={loading}
           label={<FormattedMessage id="app.servers.addServer.button" defaultMessage="Add server" />}
           onClick={() => {
             this.props.apiAddServer({name: this.addServerTextFieldValue});
@@ -76,6 +78,7 @@ export class ServersPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    loading: state.api.get('loading'),
     servers: state.api.getIn(['data', 'servers']),
     serversLastUpdate: state.api.getIn(['lastUpdate', 'servers'])
   };
